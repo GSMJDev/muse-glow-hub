@@ -146,6 +146,10 @@
   * {
     border-color: var(--color-border);
   }
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+  }
 
   body {
     background-color: var(--color-background);
