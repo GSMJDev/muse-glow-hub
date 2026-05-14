@@ -24,11 +24,7 @@ export function LeadModal() {
     >
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={close} />
       <div
-        className="relative w-full max-w-lg rounded-sm border border-gold/30 p-10 md:p-14 text-center shadow-2xl"
-        style={{
-          background:
-            "linear-gradient(160deg, oklch(0.10 0.01 30) 0%, oklch(0.18 0.08 18) 100%)",
-        }}
+        className="relative w-full max-w-lg rounded-sm border border-burgundy/30 p-10 md:p-14 text-center shadow-2xl bg-background"
       >
         <button
           aria-label="Close"

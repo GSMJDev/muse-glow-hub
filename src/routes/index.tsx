@@ -10,12 +10,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Quiet luxury skincare, body contouring, advanced facials and massage in Stoneham, MA. By appointment only.",
+          "The premier facial spa and skincare clinic in Shrewsbury, MA. Advanced facials, waxing, lymphatic drainage and body treatments.",
       },
       { property: "og:title", content: "MUSE Aesthetics & Spa by Missi" },
       {
         property: "og:description",
-        content: "Elevated skincare and body treatments designed to enhance your natural beauty.",
+        content: "Results-driven skincare and body treatments in a warm, inviting environment.",
       },
     ],
   }),
@@ -28,20 +28,16 @@ const services = [
     desc: "Bespoke clinical facials engineered for radiance, firmness and lasting clarity.",
   },
   {
-    title: "Body Contouring",
-    desc: "Non-invasive sculpting to refine, tone and reveal your most confident silhouette.",
+    title: "Waxing",
+    desc: "Precise, gentle hair removal for silky-smooth, beautifully prepared skin.",
   },
   {
-    title: "Acne Treatments",
-    desc: "Targeted protocols that calm, clear and rebalance even the most reactive skin.",
+    title: "Lymphatic Drainage",
+    desc: "Restorative manual therapy that reduces puffiness and revives natural circulation.",
   },
   {
-    title: "Infra Red Sauna",
-    desc: "Deep cellular detoxification, recovery and a quieter, more restored nervous system.",
-  },
-  {
-    title: "Massages",
-    desc: "Intentional bodywork that releases tension and restores the body's natural rhythm.",
+    title: "Body Treatments",
+    desc: "Sculpting, nourishing rituals that refine, tone and renew from head to toe.",
   },
 ];
 
@@ -99,20 +95,17 @@ function Index() {
       {/* ABOUT */}
       <section id="about" className="py-28 md:py-40 px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <SectionLabel>SOBRE NÓS</SectionLabel>
+          <SectionLabel>ABOUT US</SectionLabel>
           <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl text-gold-gradient leading-tight">
-            A sanctuary shaped by<br />
-            <em className="italic font-light">precision and touch.</em>
+            Beauty meets wellness,<br />
+            <em className="italic font-light">in perfect balance.</em>
           </h2>
           <div className="mt-10 space-y-6 text-foreground/75 text-base md:text-lg leading-relaxed">
             <p>
-              Founded by <span className="text-gold">Missi</span>, MUSE was born from a quiet obsession
-              with the craft of beautiful skin. Tucked into Stoneham, MA, our studio is intimate,
-              intentional, and entirely yours during your visit.
-            </p>
-            <p>
-              Every protocol is a private composition — clinical precision met with a softer,
-              more human touch. This is not a spa. It is a personal ritual.
+              MUSE Aesthetics &amp; Spa by <span className="text-gold">Missi</span> is the premier
+              facial spa and skincare clinic in Shrewsbury, MA. We specialize in finding the
+              perfect balance between beauty and wellness, offering results-driven treatments
+              in a warm and inviting environment.
             </p>
           </div>
         </div>
@@ -124,10 +117,10 @@ function Index() {
           <div className="text-center mb-20">
             <SectionLabel>THE SIGNATURE MENU</SectionLabel>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl text-gold-gradient">
-              Serviços
+              Services
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s, i) => (
               <div
                 key={s.title}
@@ -189,7 +182,7 @@ function Index() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <SectionLabel>MOMENTS</SectionLabel>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-gold-gradient">Galeria</h2>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-gold-gradient">Gallery</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
@@ -197,7 +190,7 @@ function Index() {
                 key={i}
                 className={`bg-muted border border-gold/15 rounded-sm overflow-hidden ${i % 3 === 0 ? "row-span-2 aspect-[3/5]" : "aspect-square"}`}
                 style={{
-                  background: `linear-gradient(${135 + i * 20}deg, oklch(0.14 0.02 30), oklch(0.20 0.06 18))`,
+                  background: `linear-gradient(${135 + i * 20}deg, oklch(0.96 0.01 350), oklch(0.88 0.05 350))`,
                 }}
               />
             ))}
@@ -213,13 +206,13 @@ function Index() {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               { name: "Missi", role: "Founder · Master Esthetician" },
-              { name: "Aria", role: "Body Contouring Specialist" },
+              { name: "Aria", role: "Lymphatic Drainage Specialist" },
               { name: "Lena", role: "Lead Skin Therapist" },
             ].map((m) => (
               <div key={m.name}>
                 <div
                   className="aspect-[4/5] rounded-sm border border-gold/20 mb-5"
-                  style={{ background: "linear-gradient(160deg, oklch(0.18 0.04 30), oklch(0.24 0.08 18))" }}
+                  style={{ background: "linear-gradient(160deg, oklch(0.96 0.01 350), oklch(0.86 0.06 350))" }}
                 />
                 <h3 className="font-serif text-2xl text-foreground">{m.name}</h3>
                 <p className="text-[10px] uppercase tracking-[0.3em] text-gold/70 mt-2">{m.role}</p>
@@ -260,14 +253,14 @@ function Index() {
           <div>
             <h5 className="font-display text-[10px] tracking-[0.3em] text-gold mb-4">VISIT</h5>
             <p className="text-sm text-foreground/70 leading-relaxed">
-              440 Main St<br />Stoneham, MA 02180
+              284 Boston Tpke<br />Shrewsbury, MA 01545
             </p>
           </div>
           <div>
             <h5 className="font-display text-[10px] tracking-[0.3em] text-gold mb-4">CONTACT</h5>
             <p className="text-sm text-foreground/70 leading-relaxed">
-              <a href="tel:+17811234567" className="hover:text-gold transition-colors">(781) 123-4567</a><br />
-              <a href="mailto:hello@musebymissi.com" className="hover:text-gold transition-colors">hello@musebymissi.com</a>
+              <a href="tel:+17745591684" className="hover:text-gold transition-colors">+1 (774) 559-1684</a><br />
+              <a href="mailto:illumeskinspa@gmail.com" className="hover:text-gold transition-colors">illumeskinspa@gmail.com</a>
             </p>
             <div className="mt-5 flex gap-4 text-gold/70">
               <a href="#" aria-label="Instagram" className="hover:text-gold">Instagram</a>

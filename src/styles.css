@@ -70,28 +70,28 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.08 0.005 30);
-  --foreground: oklch(0.92 0.02 60);
-  --card: oklch(0.12 0.008 30);
-  --card-foreground: oklch(0.92 0.02 60);
-  --popover: oklch(0.10 0.008 30);
-  --popover-foreground: oklch(0.92 0.02 60);
-  --primary: oklch(0.78 0.08 60);
-  --primary-foreground: oklch(0.08 0.005 30);
-  --secondary: oklch(0.30 0.10 18);
-  --secondary-foreground: oklch(0.92 0.02 60);
-  --muted: oklch(0.16 0.008 30);
-  --muted-foreground: oklch(0.65 0.03 50);
-  --accent: oklch(0.78 0.08 60);
-  --accent-foreground: oklch(0.08 0.005 30);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.02 350);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 350);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 350);
+  --primary: oklch(0.38 0.12 350);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.01 350);
+  --secondary-foreground: oklch(0.38 0.12 350);
+  --muted: oklch(0.97 0.005 350);
+  --muted-foreground: oklch(0.45 0.02 350);
+  --accent: oklch(0.38 0.12 350);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.78 0.08 60 / 25%);
-  --input: oklch(0.20 0.01 30);
-  --ring: oklch(0.78 0.08 60);
-  --gold: oklch(0.80 0.09 65);
-  --gold-soft: oklch(0.86 0.06 60);
-  --burgundy: oklch(0.32 0.10 18);
+  --border: oklch(0.38 0.12 350 / 20%);
+  --input: oklch(1 0 0);
+  --ring: oklch(0.38 0.12 350);
+  --gold: oklch(0.38 0.12 350);
+  --gold-soft: oklch(0.50 0.13 350);
+  --burgundy: oklch(0.38 0.12 350);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -167,20 +167,20 @@
 
 @layer utilities {
   .font-display { font-family: var(--font-display); letter-spacing: 0.18em; }
-  .text-gold { color: var(--gold); }
-  .bg-gold { background-color: var(--gold); }
-  .border-gold { border-color: var(--gold); }
+  .text-gold { color: var(--burgundy); }
+  .bg-gold { background-color: var(--burgundy); }
+  .border-gold { border-color: var(--burgundy); }
   .gold-gradient {
-    background: linear-gradient(135deg, oklch(0.86 0.06 60), oklch(0.72 0.10 55), oklch(0.86 0.06 60));
+    background: linear-gradient(135deg, oklch(0.42 0.13 350), oklch(0.34 0.12 350), oklch(0.42 0.13 350));
   }
   .text-gold-gradient {
-    background: linear-gradient(135deg, #e8c9a8, #d4a574, #e8c9a8);
+    background: linear-gradient(135deg, oklch(0.42 0.13 350), oklch(0.30 0.11 350), oklch(0.42 0.13 350));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .glass {
-    background: color-mix(in oklab, var(--background) 70%, transparent);
+    background: color-mix(in oklab, var(--background) 80%, transparent);
     backdrop-filter: blur(14px) saturate(140%);
     -webkit-backdrop-filter: blur(14px) saturate(140%);
   }
