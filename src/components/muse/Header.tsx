@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import logo from "@/assets/muse-logo.png";
 
 const links = [
-  { href: "#about", label: "Sobre Nós" },
-  { href: "#services", label: "Serviços" },
+  { href: "#about", label: "About Us" },
+  { href: "#services", label: "Services" },
   { href: "#giftcard", label: "Gift Card" },
   { href: "#membership", label: "Membership" },
   { href: "#packages", label: "Packages" },
-  { href: "#gallery", label: "Galeria" },
+  { href: "#gallery", label: "Gallery" },
   { href: "#team", label: "Meet the Team" },
-  { href: "#contact", label: "Contato" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Header() {
