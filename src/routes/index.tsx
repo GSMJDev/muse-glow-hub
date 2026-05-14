@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/muse/Header";
 import { LeadModal } from "@/components/muse/LeadModal";
 import heroImg from "@/assets/hero-facial.jpg";
+import logoEmblem from "@/assets/muse-logo-rosegold.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,7 +65,12 @@ function Index() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         <div className="relative z-10 text-center px-6 max-w-4xl">
-          <SectionLabel>MUSE · AESTHETICS &amp; SPA</SectionLabel>
+          <img
+            src={logoEmblem}
+            alt="Muse Aesthetics & Spa by Missi"
+            className="mx-auto h-40 md:h-56 w-auto mb-4"
+          />
+          <SectionLabel>SHREWSBURY · MASSACHUSETTS</SectionLabel>
           <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-gold-gradient">
             Your Glow,<br />
             <em className="italic font-light">Our Signature</em>
@@ -234,11 +240,28 @@ function Index() {
           </p>
           <div
             id="vagaro-widget-container"
-            className="mt-12 min-h-[600px] bg-white rounded-sm border border-gold/20 p-10 flex items-center justify-center text-foreground/40 text-sm"
+            className="mt-12 bg-white rounded-sm border border-gold/20 overflow-hidden"
           >
-            {/* Vagaro iframe will be injected here */}
-            Vagaro booking widget will load here.
+            <iframe
+              title="Book on Vagaro"
+              src="https://www.vagaro.com/mizzmissiaesthetics"
+              className="w-full"
+              style={{ height: "900px", border: 0 }}
+              loading="lazy"
+            />
           </div>
+          <p className="mt-6 text-xs text-foreground/60">
+            Trouble loading?{" "}
+            <a
+              href="https://www.vagaro.com/mizzmissiaesthetics"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold underline-offset-4 hover:underline"
+            >
+              Book directly on Vagaro
+            </a>
+            .
+          </p>
         </div>
       </section>
 
