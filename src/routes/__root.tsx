@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Muse Aesthetic SPA" },
+      { name: "description", content: "Experience Elevated Skincare and Body Treatments Designed to Enhance Your Natural Beauty" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Muse Aesthetic SPA" },
+      { property: "og:description", content: "Experience Elevated Skincare and Body Treatments Designed to Enhance Your Natural Beauty" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Muse Aesthetic SPA" },
+      { name: "twitter:description", content: "Experience Elevated Skincare and Body Treatments Designed to Enhance Your Natural Beauty" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2c0bd41d-5657-403d-981e-7bd86d38f344/id-preview-324945cc--094102ad-e120-4ab0-a556-66d795108e37.lovable.app-1779106622379.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2c0bd41d-5657-403d-981e-7bd86d38f344/id-preview-324945cc--094102ad-e120-4ab0-a556-66d795108e37.lovable.app-1779106622379.png" },
     ],
     links: [
       {
