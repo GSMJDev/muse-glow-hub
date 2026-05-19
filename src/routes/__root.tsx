@@ -9,6 +9,9 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Header } from "@/components/muse/Header";
+import { Footer } from "@/components/muse/Footer";
+import { LeadModal } from "@/components/muse/LeadModal";
 
 function NotFoundComponent() {
   return (
@@ -117,7 +120,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="min-h-screen bg-background text-foreground flex flex-col">
+        <Header />
+        <LeadModal />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }
