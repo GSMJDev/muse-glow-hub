@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 export function LeadModal() {
   const [open, setOpen] = useState(false);
@@ -42,13 +43,13 @@ export function LeadModal() {
         <p className="mt-5 text-sm md:text-base text-foreground/75 leading-relaxed">
           Reserve your complimentary consultation and discover a treatment plan crafted entirely around your skin.
         </p>
-        <a
-          href="#book"
+        <Link
+          to="/book"
           onClick={close}
           className="mt-8 inline-flex items-center justify-center px-10 py-4 text-[11px] uppercase tracking-[0.3em] text-background gold-gradient rounded-sm hover:opacity-90 transition-all"
         >
           Book Now!
-        </a>
+        </Link>
         <p className="mt-5 text-[10px] uppercase tracking-[0.25em] text-foreground/40">By appointment only</p>
       </div>
     </div>
