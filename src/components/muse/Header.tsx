@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/muse-logo-horizontal.png";
 
 const links = [
-  { href: "#about", label: "About Us" },
-  { href: "#services", label: "Services" },
-  { href: "#giftcard", label: "Gift Card" },
-  { href: "#membership", label: "Membership" },
-  { href: "#packages", label: "Packages" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#team", label: "Meet the Team" },
-  { href: "#contact", label: "Contact" },
-];
+  { to: "/about", label: "About Us" },
+  { to: "/services", label: "Services" },
+  { to: "/offers", label: "Offers" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/team", label: "Meet the Team" },
+  { to: "/contact", label: "Contact" },
+] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -30,27 +29,28 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
-        <a href="#top" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Muse Aesthetics & Spa by Missi" className="h-14 w-auto" />
-        </a>
+        </Link>
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <Link
+              key={l.to}
+              to={l.to}
+              activeProps={{ className: "text-gold" }}
               className="text-[11px] uppercase tracking-[0.2em] text-foreground/80 hover:text-gold transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <a
-            href="#book"
+          <Link
+            to="/book"
             className="hidden sm:inline-flex items-center justify-center px-6 py-3 text-[11px] uppercase tracking-[0.25em] text-background gold-gradient hover:opacity-90 transition-all rounded-sm"
           >
             Book Now
-          </a>
+          </Link>
           <button
             aria-label="Menu"
             onClick={() => setOpen((v) => !v)}
@@ -65,22 +65,22 @@ export function Header() {
       {open && (
         <div className="lg:hidden glass border-t border-gold/10 px-6 py-6 flex flex-col gap-4">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <Link
+              key={l.to}
+              to={l.to}
               onClick={() => setOpen(false)}
               className="text-xs uppercase tracking-[0.2em] text-foreground/85 hover:text-gold"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#book"
+          <Link
+            to="/book"
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex justify-center px-6 py-3 text-[11px] uppercase tracking-[0.25em] text-background gold-gradient rounded-sm"
           >
             Book Now
-          </a>
+          </Link>
         </div>
       )}
     </header>
