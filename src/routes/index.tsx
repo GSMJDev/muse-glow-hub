@@ -40,7 +40,9 @@ function Index() {
           <img
             src={logoEmblem}
             alt="Muse Aesthetics & Spa by Missi"
-            className="mx-auto h-40 md:h-56 w-auto mb-4"
+            width={640}
+            height={640}
+            className="mx-auto h-56 md:h-72 lg:h-80 w-auto mb-4 [image-rendering:auto] drop-shadow-[0_4px_24px_rgba(0,0,0,0.25)]"
           />
           <SectionLabel>SHREWSBURY · MASSACHUSETTS</SectionLabel>
           <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-gold-gradient">
@@ -86,6 +88,40 @@ function Index() {
           >
             More about us
           </Link>
+        </div>
+      </section>
+
+      {/* BOOK ON VAGARO */}
+      <section className="pb-28 md:pb-40 px-6">
+        <div className="mx-auto max-w-5xl text-center">
+          <SectionLabel>RESERVATIONS</SectionLabel>
+          <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl text-gold-gradient">
+            Book Your Visit
+          </h2>
+          <p className="mt-6 text-foreground/70 max-w-xl mx-auto">
+            Choose the moment that's right for you. We honor a single guest at a time.
+          </p>
+          <div className="mt-12 bg-white rounded-sm border border-gold/20 overflow-hidden">
+            <iframe
+              title="Book on Vagaro"
+              src="https://www.vagaro.com/mizzmissiaesthetics"
+              className="w-full"
+              style={{ height: "900px", border: 0 }}
+              loading="lazy"
+            />
+          </div>
+          <p className="mt-6 text-xs text-foreground/60">
+            Trouble loading?{" "}
+            <a
+              href="https://www.vagaro.com/mizzmissiaesthetics"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold underline-offset-4 hover:underline"
+            >
+              Book directly on Vagaro
+            </a>
+            .
+          </p>
         </div>
       </section>
     </>
