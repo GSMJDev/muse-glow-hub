@@ -30,7 +30,13 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Muse Aesthetics & Spa by Missi" className="h-14 w-auto" />
+          <img
+            src={logo}
+            alt="Muse Aesthetics & Spa by Missi"
+            width={480}
+            height={160}
+            className="h-20 md:h-24 w-auto [image-rendering:auto] drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
+          />
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
