@@ -36,6 +36,34 @@ function ContactPage() {
             <a href="mailto:illumeskinspa@gmail.com" className="text-sm text-foreground/80 hover:text-gold transition-colors break-all">illumeskinspa@gmail.com</a>
           </div>
         </div>
+
+        <div className="mt-20">
+          <SectionLabel>RESERVATIONS</SectionLabel>
+          <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-5xl text-gold-gradient">
+            Book Your Visit
+          </h2>
+          <div className="mt-10 bg-white rounded-sm border border-gold/20 overflow-hidden">
+            <iframe
+              title="Book on Vagaro"
+              src="https://www.vagaro.com/mizzmissiaesthetics"
+              className="w-full"
+              style={{ height: "900px", border: 0 }}
+              loading="lazy"
+            />
+          </div>
+          <p className="mt-6 text-xs text-foreground/60">
+            Trouble loading?{" "}
+            <a
+              href="https://www.vagaro.com/mizzmissiaesthetics"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold underline-offset-4 hover:underline"
+            >
+              Book directly on Vagaro
+            </a>
+            .
+          </p>
+        </div>
       </div>
     </section>
   );
