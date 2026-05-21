@@ -24,15 +24,15 @@ function AboutPage() {
         </h1>
         <div className="mt-10 space-y-6 text-foreground/75 text-base md:text-lg leading-relaxed text-left md:text-center">
           <p>
-            MUSE Aesthetics &amp; Spa by <span className="text-gold">Missi</span> is the premier
-            facial spa and skincare clinic in Shrewsbury, MA. We specialize in finding the
-            perfect balance between beauty and wellness, offering results-driven treatments
-            in a warm and inviting environment.
+            Welcome to <span className="text-gold">Mizz Muse By Missi Aesthetics</span>, where caring
+            for your beauty and well-being is our top priority. Here, you will find a welcoming
+            environment where our dedicated team is ready to meet your needs with professionalism
+            and care.
           </p>
           <p>
-            Every visit is a quiet ritual — one guest at a time, fully tailored to your skin's
-            story, lifestyle, and goals. From advanced clinical facials to restorative body
-            treatments, our work is engineered for visible, lasting results.
+            Count on us to provide high-quality aesthetic experiences, based on our dedication to
+            being better every day. We look forward to welcoming you and being part of your
+            self-care journey.
           </p>
         </div>
         <Link
