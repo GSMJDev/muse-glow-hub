@@ -26,8 +26,7 @@ export function Footer() {
             284 Boston Tpke<br />Shrewsbury, MA 01545
           </p>
           <p className="mt-4 text-sm text-foreground/70 leading-relaxed">
-            <a href="tel:+17745591684" className="hover:text-gold transition-colors">+1 (774) 559-1684</a><br />
-            <a href="mailto:illumeskinspa@gmail.com" className="hover:text-gold transition-colors">illumeskinspa@gmail.com</a>
+            <a href="tel:+17745591684" className="hover:text-gold transition-colors">+1 (774) 559-1684</a>
           </p>
         </div>
         <div>
