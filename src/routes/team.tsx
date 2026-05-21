@@ -39,7 +39,7 @@ function MemberCard({ m }: { m: Member }) {
   return (
     <article className="group flex flex-col bg-card/40 border border-gold/20 rounded-sm overflow-hidden hover:border-gold/60 transition-all duration-500">
       <div
-        className="relative aspect-[4/5] overflow-hidden"
+        className="relative w-full h-80 md:h-96 overflow-hidden"
         style={{ background: "linear-gradient(160deg, oklch(0.96 0.01 350), oklch(0.86 0.06 350))" }}
       >
         {!errored && (
@@ -49,7 +49,7 @@ function MemberCard({ m }: { m: Member }) {
             loading="lazy"
             onLoad={() => setLoaded(true)}
             onError={() => setErrored(true)}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 w-full h-full object-cover object-center block transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
           />
         )}
         {(!loaded || errored) && (
