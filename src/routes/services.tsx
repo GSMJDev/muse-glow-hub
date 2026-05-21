@@ -1,5 +1,15 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
+
+const VAGARO_LINK = "YOUR_VAGARO_LINK_HERE";
+
+const categoryImage: Record<string, string> = {
+  facial: "https://source.unsplash.com/800x600/?facial,skincare",
+  waxing: "https://source.unsplash.com/800x600/?waxing,spa",
+  corporal: "https://source.unsplash.com/800x600/?body,massage",
+  "chemical-peel": "https://source.unsplash.com/800x600/?dermatology,skincare",
+  more: "https://source.unsplash.com/800x600/?spa,skincare",
+};
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -97,15 +107,32 @@ function PriceTag({ duration, price }: { duration?: string; price?: string }) {
   );
 }
 
-function ServiceCard({ s }: { s: Service }) {
+function ServiceCard({ s, image }: { s: Service; image: string }) {
   return (
-    <div className="p-6 md:p-7 bg-card/50 border border-gold/15 rounded-sm hover:border-gold/50 transition-all">
-      <h3 className="font-serif text-xl text-foreground">{s.title}</h3>
-      <PriceTag duration={s.duration} price={s.price} />
-      {s.desc && (
-        <p className="mt-4 text-sm text-foreground/70 leading-relaxed">{s.desc}</p>
-      )}
-    </div>
+    <a
+      href={VAGARO_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block bg-card/50 border border-gold/15 rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:border-gold/50"
+    >
+      <div className="w-full h-48 overflow-hidden">
+        <img
+          src={image}
+          alt={s.title}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      </div>
+      <div className="p-6 md:p-7">
+        <h3 className="font-serif text-xl text-foreground group-hover:text-gold transition-colors">
+          {s.title}
+        </h3>
+        <PriceTag duration={s.duration} price={s.price} />
+        {s.desc && (
+          <p className="mt-4 text-sm text-foreground/70 leading-relaxed">{s.desc}</p>
+        )}
+      </div>
+    </a>
   );
 }
 
@@ -155,12 +182,14 @@ function ServicesPage() {
                       {cat.label}
                     </h2>
                   </div>
-                  <Link
-                    to="/book"
+                  <a
+                    href={VAGARO_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[10px] uppercase tracking-[0.3em] text-gold border-b border-gold/40 pb-1 hover:border-gold"
                   >
                     Book this →
-                  </Link>
+                  </a>
                 </div>
 
                 {cat.intro && (
@@ -172,20 +201,35 @@ function ServicesPage() {
                 <div
                   className={
                     cat.id === "more"
-                      ? "grid grid-cols-2 md:grid-cols-4 gap-4"
+                      ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
                       : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                   }
                 >
                   {cat.items.map((s) =>
                     cat.id === "more" ? (
-                      <div
+                      <a
                         key={s.title}
-                        className="p-5 text-center bg-card/40 border border-gold/15 rounded-sm hover:border-gold/50 transition-all"
+                        href={VAGARO_LINK}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block bg-card/40 border border-gold/15 rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:border-gold/50"
                       >
-                        <span className="font-serif text-base text-foreground">{s.title}</span>
-                      </div>
+                        <div className="w-full h-32 overflow-hidden">
+                          <img
+                            src={categoryImage[cat.id]}
+                            alt={s.title}
+                            loading="lazy"
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                        </div>
+                        <div className="p-4 text-center">
+                          <span className="font-serif text-base text-foreground group-hover:text-gold transition-colors">
+                            {s.title}
+                          </span>
+                        </div>
+                      </a>
                     ) : (
-                      <ServiceCard key={s.title} s={s} />
+                      <ServiceCard key={s.title} s={s} image={categoryImage[cat.id]} />
                     )
                   )}
                 </div>
