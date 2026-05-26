@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+
+const VAGARO_URL = "https://www.vagaro.com/mizzmissiaesthetics";
+
+const featured = [
+  { name: "Signature Deep Cleansing Facial", duration: "60 min" },
+  { name: "Lymphatic Drainage Detox + Hot Blanket", duration: "75 min" },
+  { name: "Full Brazilian Wax", duration: "30 min" },
+];
 
 export function LeadModal() {
   const [open, setOpen] = useState(false);
@@ -38,18 +45,31 @@ export function LeadModal() {
         </button>
         <p className="font-display text-[10px] tracking-[0.4em] text-gold/80 mb-5">MUSE · INVITATION</p>
         <h3 className="font-serif text-3xl md:text-4xl text-gold-gradient leading-tight">
-          The Power of a Perfect Treatment
+          Treatments crafted for you
         </h3>
         <p className="mt-5 text-sm md:text-base text-foreground/75 leading-relaxed">
-          Reserve your complimentary consultation and discover a treatment plan crafted entirely around your skin.
+          Reserve one of our most-loved experiences and feel the Mizz Missi difference.
         </p>
-        <Link
-          to="/book"
+        <ul className="mt-6 space-y-2 text-left">
+          {featured.map((f) => (
+            <li
+              key={f.name}
+              className="flex items-center justify-between border-b border-gold/15 pb-2 text-sm text-foreground/80"
+            >
+              <span>{f.name}</span>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-gold/70">{f.duration}</span>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={VAGARO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={close}
           className="mt-8 inline-flex items-center justify-center px-10 py-4 text-[11px] uppercase tracking-[0.3em] text-background gold-gradient rounded-sm hover:opacity-90 transition-all"
         >
-          Book Now!
-        </Link>
+          Book on Vagaro
+        </a>
         <p className="mt-5 text-[10px] uppercase tracking-[0.25em] text-foreground/40">By appointment only</p>
       </div>
     </div>

@@ -45,9 +45,10 @@ function Index() {
             className="mx-auto h-56 md:h-72 lg:h-80 w-auto mb-4 [image-rendering:auto] drop-shadow-[0_4px_24px_rgba(0,0,0,0.25)]"
           />
           <SectionLabel>SHREWSBURY · MASSACHUSETTS</SectionLabel>
-          <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-gold-gradient">
-            Your Glow,<br />
-            <em className="italic font-light">Our Signature</em>
+          <h1 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-gold-gradient max-w-4xl mx-auto">
+            Your Beauty is{" "}
+            <span className="block sm:inline">our greatest</span>{" "}
+            <em className="italic font-light block sm:inline">inspiration</em>
           </h1>
           <p className="mt-8 text-base md:text-lg text-foreground/75 max-w-xl mx-auto leading-relaxed">
             Experience elevated skincare and body treatments designed to enhance your natural beauty.
@@ -78,15 +79,14 @@ function Index() {
             <em className="italic font-light">in perfect balance.</em>
           </h2>
           <p className="mt-10 text-foreground/75 text-base md:text-lg leading-relaxed">
-            MUSE Aesthetics &amp; Spa by <span className="text-gold">Missi</span> is the premier
-            facial spa and skincare clinic in Shrewsbury, MA — results-driven treatments in a warm,
-            inviting environment.
+            A welcoming sanctuary in Shrewsbury, MA where dedicated care meets results-driven
+            aesthetics.
           </p>
           <Link
             to="/about"
             className="mt-8 inline-block text-[10px] uppercase tracking-[0.3em] text-gold border-b border-gold/40 pb-1 hover:border-gold"
           >
-            More about us
+            Read our full story
           </Link>
         </div>
       </section>

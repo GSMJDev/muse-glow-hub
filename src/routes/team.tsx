@@ -20,10 +20,10 @@ type Member = { name: string; role: string; src: string; bio: string };
 
 const team: Member[] = [
   {
-    name: "Fernanda",
-    role: "Licensed Esthetician, Psychologist & Instructor",
+    name: "Fernanda Missi",
+    role: "Licensed Esthetician & Instructor",
     src: fernandaImg,
-    bio: "My name is Fernanda, I'm a licensed esthetician, a psychologist with over 10 years of experience, and a licensed esthetics instructor at Flávia Leal School in Massachusetts. I have a passion for caring for people, and I strive to infuse that love into everything I do. I'm a mother to a splendid girl who is the inspiration behind Mizz Missi Aesthetics. I aim to provide you with an experience where you feel your face, body, and mind in harmony and satisfaction. Your trust in us is crucial, and we'll do everything within our power to earn it. I hope Mizz Missi Aesthetics becomes part of your self-care journey.",
+    bio: "My name is Fernanda, I'm a licensed esthetician with over 10 years of experience, and a licensed esthetics instructor at Flávia Leal School in Massachusetts. I have a passion for caring for people, and I strive to infuse that love into everything I do. I'm a mother to a splendid girl who is the inspiration behind Mizz Missi Aesthetics. I aim to provide you with an experience where you feel your face, body, and mind in harmony and satisfaction. Your trust in us is crucial, and we'll do everything within our power to earn it. I hope Mizz Missi Aesthetics becomes part of your self-care journey.",
   },
   {
     name: "Michele",
@@ -39,7 +39,7 @@ function MemberCard({ m }: { m: Member }) {
   return (
     <article className="group flex flex-col bg-card/40 border border-gold/20 rounded-sm overflow-hidden hover:border-gold/60 transition-all duration-500">
       <div
-        className="relative w-full h-80 md:h-96 overflow-hidden"
+        className="relative w-full h-96 md:h-[28rem] overflow-hidden"
         style={{ background: "linear-gradient(160deg, oklch(0.96 0.01 350), oklch(0.86 0.06 350))" }}
       >
         {!errored && (
@@ -49,7 +49,7 @@ function MemberCard({ m }: { m: Member }) {
             loading="lazy"
             onLoad={() => setLoaded(true)}
             onError={() => setErrored(true)}
-            className={`absolute inset-0 w-full h-full object-cover object-center block transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 w-full h-full object-cover object-[center_top] block transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
           />
         )}
         {(!loaded || errored) && (
