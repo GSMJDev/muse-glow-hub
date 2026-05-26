@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { Header } from "@/components/muse/Header";
 import { Footer } from "@/components/muse/Footer";
 import { LeadModal } from "@/components/muse/LeadModal";
+import { ChatWidget } from "@/components/muse/ChatWidget";
 
 function NotFoundComponent() {
   return (
@@ -127,6 +128,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <ChatWidget />
       </div>
     </QueryClientProvider>
   );
