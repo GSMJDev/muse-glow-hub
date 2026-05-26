@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
 
 export const Route = createFileRoute("/offers")({
@@ -14,9 +14,27 @@ export const Route = createFileRoute("/offers")({
 });
 
 const offers = [
-  { id: "giftcard", label: "Gift Card", desc: "The gift of glow — beautifully presented, endlessly personal." },
-  { id: "membership", label: "Membership", desc: "Monthly rituals with reserved pricing and exclusive access." },
-  { id: "packages", label: "Packages", desc: "Curated treatment series engineered for visible, lasting results." },
+  {
+    id: "giftcard",
+    label: "Gift Card",
+    desc: "The gift of glow — beautifully presented, endlessly personal.",
+    cta: "Buy Gift Card",
+    href: "https://www.vagaro.com/mizzmissiaesthetics/gift-certificates",
+  },
+  {
+    id: "membership",
+    label: "Membership",
+    desc: "Monthly rituals with reserved pricing and exclusive access.",
+    cta: "Inquire",
+    href: "https://www.vagaro.com/mizzmissiaesthetics",
+  },
+  {
+    id: "packages",
+    label: "Packages",
+    desc: "Curated treatment series engineered for visible, lasting results.",
+    cta: "Book a Package",
+    href: "https://www.vagaro.com/mizzmissiaesthetics",
+  },
 ];
 
 function OffersPage() {
@@ -33,9 +51,14 @@ function OffersPage() {
               <SectionLabel>EXCLUSIVE</SectionLabel>
               <h3 className="mt-5 font-serif text-3xl text-gold-gradient">{c.label}</h3>
               <p className="mt-4 text-sm text-foreground/65">{c.desc}</p>
-              <Link to="/contact" className="mt-7 inline-block text-[10px] uppercase tracking-[0.3em] text-gold border-b border-gold/40 pb-1 hover:border-gold">
-                Inquire
-              </Link>
+              <a
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-block text-[10px] uppercase tracking-[0.3em] text-gold border-b border-gold/40 pb-1 hover:border-gold"
+              >
+                {c.cta}
+              </a>
             </div>
           ))}
         </div>
