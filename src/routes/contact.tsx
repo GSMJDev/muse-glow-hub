@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SectionLabel } from "@/components/muse/Footer";
 
 export const Route = createFileRoute("/contact")({
@@ -23,14 +24,24 @@ function ContactPage() {
           By appointment only — we look forward to welcoming you.
         </p>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          <div className="p-8 border border-gold/20 rounded-sm bg-card/40">
-            <h2 className="font-display text-[10px] tracking-[0.3em] text-gold mb-3">VISIT</h2>
-            <p className="text-sm text-foreground/75 leading-relaxed">284 Boston Tpke<br />Shrewsbury, MA 01545</p>
+          <div className="flex flex-col gap-6">
+            <div className="p-8 border border-gold/20 rounded-sm bg-card/40">
+              <h2 className="font-display text-[10px] tracking-[0.3em] text-gold mb-3">VISIT</h2>
+              <p className="text-sm text-foreground/75 leading-relaxed">
+                284 Boston Tpke<br />Shrewsbury, MA 01545
+              </p>
+            </div>
+            <div className="p-8 border border-gold/20 rounded-sm bg-card/40">
+              <h2 className="font-display text-[10px] tracking-[0.3em] text-gold mb-3">CALL</h2>
+              <a
+                href="tel:+17745591684"
+                className="text-sm text-foreground/80 hover:text-gold transition-colors"
+              >
+                +1 (774) 559-1684
+              </a>
+            </div>
           </div>
-          <div className="p-8 border border-gold/20 rounded-sm bg-card/40">
-            <h2 className="font-display text-[10px] tracking-[0.3em] text-gold mb-3">CALL</h2>
-            <a href="tel:+17745591684" className="text-sm text-foreground/80 hover:text-gold transition-colors">+1 (774) 559-1684</a>
-          </div>
+          <ContactForm />
         </div>
 
         <div className="mt-20">
