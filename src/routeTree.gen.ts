@@ -11,7 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as OffersRouteImport } from './routes/offers'
+import { Route as MembershipRouteImport } from './routes/membership'
+import { Route as GiftCardRouteImport } from './routes/gift-card'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BookRouteImport } from './routes/book'
@@ -29,9 +32,24 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PackagesRoute = PackagesRouteImport.update({
+  id: '/packages',
+  path: '/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OffersRoute = OffersRouteImport.update({
   id: '/offers',
   path: '/offers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipRoute = MembershipRouteImport.update({
+  id: '/membership',
+  path: '/membership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GiftCardRoute = GiftCardRouteImport.update({
+  id: '/gift-card',
+  path: '/gift-card',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -71,7 +89,10 @@ export interface FileRoutesByFullPath {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/gift-card': typeof GiftCardRoute
+  '/membership': typeof MembershipRoute
   '/offers': typeof OffersRoute
+  '/packages': typeof PackagesRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/api/chat': typeof ApiChatRoute
@@ -82,7 +103,10 @@ export interface FileRoutesByTo {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/gift-card': typeof GiftCardRoute
+  '/membership': typeof MembershipRoute
   '/offers': typeof OffersRoute
+  '/packages': typeof PackagesRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/api/chat': typeof ApiChatRoute
@@ -94,7 +118,10 @@ export interface FileRoutesById {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/gift-card': typeof GiftCardRoute
+  '/membership': typeof MembershipRoute
   '/offers': typeof OffersRoute
+  '/packages': typeof PackagesRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/api/chat': typeof ApiChatRoute
@@ -107,7 +134,10 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/gallery'
+    | '/gift-card'
+    | '/membership'
     | '/offers'
+    | '/packages'
     | '/services'
     | '/team'
     | '/api/chat'
@@ -118,7 +148,10 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/gallery'
+    | '/gift-card'
+    | '/membership'
     | '/offers'
+    | '/packages'
     | '/services'
     | '/team'
     | '/api/chat'
@@ -129,7 +162,10 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/gallery'
+    | '/gift-card'
+    | '/membership'
     | '/offers'
+    | '/packages'
     | '/services'
     | '/team'
     | '/api/chat'
@@ -141,7 +177,10 @@ export interface RootRouteChildren {
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  GiftCardRoute: typeof GiftCardRoute
+  MembershipRoute: typeof MembershipRoute
   OffersRoute: typeof OffersRoute
+  PackagesRoute: typeof PackagesRoute
   ServicesRoute: typeof ServicesRoute
   TeamRoute: typeof TeamRoute
   ApiChatRoute: typeof ApiChatRoute
@@ -163,11 +202,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/packages': {
+      id: '/packages'
+      path: '/packages'
+      fullPath: '/packages'
+      preLoaderRoute: typeof PackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/offers': {
       id: '/offers'
       path: '/offers'
       fullPath: '/offers'
       preLoaderRoute: typeof OffersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership': {
+      id: '/membership'
+      path: '/membership'
+      fullPath: '/membership'
+      preLoaderRoute: typeof MembershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gift-card': {
+      id: '/gift-card'
+      path: '/gift-card'
+      fullPath: '/gift-card'
+      preLoaderRoute: typeof GiftCardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -221,7 +281,10 @@ const rootRouteChildren: RootRouteChildren = {
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  GiftCardRoute: GiftCardRoute,
+  MembershipRoute: MembershipRoute,
   OffersRoute: OffersRoute,
+  PackagesRoute: PackagesRoute,
   ServicesRoute: ServicesRoute,
   TeamRoute: TeamRoute,
   ApiChatRoute: ApiChatRoute,

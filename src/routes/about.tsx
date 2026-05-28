@@ -19,20 +19,45 @@ function AboutPage() {
       <div className="mx-auto max-w-4xl text-center">
         <SectionLabel>ABOUT US</SectionLabel>
         <h1 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl text-gold-gradient leading-tight">
-          Beauty meets wellness,<br />
-          <em className="italic font-light">in perfect balance.</em>
+          Beauty and wellness<br />
+          <em className="italic font-light">in perfect harmony.</em>
         </h1>
         <div className="mt-10 space-y-6 text-foreground/75 text-base md:text-lg leading-relaxed text-left md:text-center">
           <p>
-            Welcome to <span className="text-gold">Mizz Muse By Missi Aesthetics</span>, where caring
-            for your beauty and well-being is our top priority. Here, you will find a welcoming
-            environment where our dedicated team is ready to meet your needs with professionalism
-            and care.
+            Welcome to <span className="text-gold">Muse By Missi Aesthetics</span> — a new chapter
+            created from the dream of offering a space where beauty, care, and well-being come
+            together in perfect harmony.
           </p>
           <p>
-            Count on us to provide high-quality aesthetic experiences, based on our dedication to
-            being better every day. We look forward to welcoming you and being part of your
-            self-care journey.
+            Founded in June 2022 as Mizz Missi Aesthetics, our journey began with a simple mission:
+            to create an environment where clients feel genuinely welcomed, confident, and inspired.
+          </p>
+          <p>
+            Over the years, we have grown not only as a business, but as a brand with greater
+            purpose, vision, and an even stronger commitment to the experience of every client.
+          </p>
+          <p className="font-serif text-xl md:text-2xl text-gold-gradient italic">
+            Today, we proudly evolve into Muse By Missi.
+          </p>
+          <p>
+            The name <em className="text-gold not-italic">"Muse"</em> represents inspiration,
+            femininity, confidence, and beauty in its most authentic form. This transition reflects
+            our growth, our vision for the future, and the experience we want every client to feel
+            from the moment they walk through our doors.
+          </p>
+          <p>
+            More than aesthetic treatments, we offer personalized experiences designed to elevate
+            self-care, confidence, and well-being in a warm, sophisticated, and thoughtfully
+            prepared environment.
+          </p>
+          <p>
+            Our team is dedicated to continuous improvement, professional excellence, and genuine
+            human connection — because we believe every client deserves to feel valued, seen, and
+            beautifully cared for.
+          </p>
+          <p className="text-gold/90">
+            Thank you for being part of our story since 2022. We look forward to welcoming you into
+            this new chapter of Muse By Missi Aesthetics.
           </p>
         </div>
         <Link

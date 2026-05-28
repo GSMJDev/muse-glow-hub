@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
+import { GoogleReviews } from "@/components/muse/GoogleReviews";
 
-const VAGARO_LINK = "YOUR_VAGARO_LINK_HERE";
+const VAGARO_LINK = "https://www.vagaro.com/mizzmissiaesthetics";
 
 const categoryImage: Record<string, string> = {
   facial: "https://source.unsplash.com/800x600/?facial,skincare",
@@ -254,8 +255,17 @@ function ServicesPage() {
             Treat now, pay later with{" "}
             <span className="text-gold-gradient not-italic font-medium">Cherry</span>.
           </p>
+          <a
+            href="https://stan.store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 text-[10px] uppercase tracking-[0.3em] text-gold border border-gold/40 rounded-sm hover:bg-gold/10 transition-all"
+          >
+            Shop on Stan.Store →
+          </a>
         </div>
       </section>
+      <GoogleReviews />
     </>
   );
 }
