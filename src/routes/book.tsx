@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
+import { VagaroWidget } from "@/components/muse/VagaroWidget";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
@@ -22,6 +23,9 @@ function BookPage() {
         <p className="mt-6 text-foreground/70 max-w-xl mx-auto">
           Choose the moment that's right for you. We honor a single guest at a time.
         </p>
+        <div className="mt-12">
+          <VagaroWidget />
+        </div>
         <div className="mt-12 bg-white rounded-sm border border-gold/20 overflow-hidden">
           <iframe
             title="Book on Vagaro"
