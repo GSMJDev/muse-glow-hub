@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
 
-const VAGARO_LINK = "YOUR_VAGARO_LINK_HERE";
+const VAGARO_LINK = "https://www.vagaro.com/mizzmissiaesthetics";
 
 const categoryImage: Record<string, string> = {
   facial: "https://source.unsplash.com/800x600/?facial,skincare",

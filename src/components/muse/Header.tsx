@@ -5,7 +5,9 @@ import logo from "@/assets/muse-logo-horizontal.png";
 const links = [
   { to: "/about", label: "About Us" },
   { to: "/services", label: "Services" },
-  { to: "/offers", label: "Offers" },
+  { to: "/gift-card", label: "Gift Card" },
+  { to: "/membership", label: "Membership" },
+  { to: "/packages", label: "Packages" },
   { to: "/gallery", label: "Gallery" },
   { to: "/team", label: "Meet the Team" },
   { to: "/contact", label: "Contact" },
@@ -35,7 +37,7 @@ export function Header() {
             alt="Muse Aesthetics & Spa by Missi"
             width={480}
             height={160}
-            className="h-20 md:h-24 w-auto [image-rendering:auto] drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
+            className="h-24 md:h-28 lg:h-32 w-auto [image-rendering:auto] drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)]"
           />
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
@@ -44,7 +46,7 @@ export function Header() {
               key={l.to}
               to={l.to}
               activeProps={{ className: "text-gold" }}
-              className="text-[11px] uppercase tracking-[0.2em] text-foreground/80 hover:text-gold transition-colors"
+              className="text-[10px] uppercase tracking-[0.2em] text-foreground/80 hover:text-gold transition-colors whitespace-nowrap"
             >
               {l.label}
             </Link>

@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const VAGARO_URL = "https://www.vagaro.com/mizzmissiaesthetics";
 
 const featured = [
-  { name: "Signature Deep Cleansing Facial", duration: "60 min" },
+  { name: "Signature Deep Cleansing Facial", duration: "50 min" },
   { name: "Lymphatic Drainage Detox + Hot Blanket", duration: "75 min" },
-  { name: "Full Brazilian Wax", duration: "30 min" },
+  { name: "Full Brazilian Wax", duration: "20 min" },
 ];
 
 export function LeadModal() {
@@ -13,8 +13,19 @@ export function LeadModal() {
 
   useEffect(() => {
     if (sessionStorage.getItem("muse_modal_seen")) return;
-    const t = setTimeout(() => setOpen(true), 5000);
-    return () => clearTimeout(t);
+    const show = () => {
+      if (sessionStorage.getItem("muse_modal_seen")) return;
+      setOpen(true);
+    };
+    const t = setTimeout(show, 10000);
+    const onExit = (e: MouseEvent) => {
+      if (e.clientY <= 0) show();
+    };
+    document.addEventListener("mouseleave", onExit);
+    return () => {
+      clearTimeout(t);
+      document.removeEventListener("mouseleave", onExit);
+    };
   }, []);
 
   const close = () => {
