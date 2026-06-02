@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SectionLabel } from "@/components/muse/Footer";
+import { VagaroWidget } from '@/components/muse/VagaroWidget';
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -44,19 +45,11 @@ function ContactPage() {
           <ContactForm />
         </div>
 
+        {/* --- ÁREA DE AGENDAMENTO COM O WIDGET --- */}
         <div className="mt-20">
           <SectionLabel>RESERVATIONS</SectionLabel>
-          <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-5xl text-gold-gradient">
-            Book Your Visit
-          </h2>
-          <div className="mt-10 bg-white rounded-sm border border-gold/20 overflow-hidden">
-            <iframe
-              title="Book on Vagaro"
-              src="https://www.vagaro.com/mizzmissiaesthetics"
-              className="w-full"
-              style={{ height: "900px", border: 0 }}
-              loading="lazy"
-            />
+          <div className="mt-10 bg-white rounded-sm border border-gold/20 py-8">
+            <VagaroWidget />
           </div>
           <p className="mt-6 text-xs text-foreground/60">
             Trouble loading?{" "}

@@ -1,36 +1,61 @@
 import { useEffect, useRef } from "react";
 
-/**
- * Embedded Vagaro booking widget.
- * - Responsive (w-full max-w-md)
- * - Inherits site typography
- * - SEO/footer links hidden
- */
 export function VagaroWidget() {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.async = true;
-    script.src =
-      "https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqpCJGtCZGcT3qmV35y6JuPlXez3Ly6puSdBuOc1WJD1wOc1WO61Ctdg4tjxMG9pUxapkUcvCu7gCmjZcoapOUc9CvdfQOW?v=ybpOFb1H06bjszZGkXdzIOI63LdoYmD2TJ2BnU9JH800#";
-    ref.current.appendChild(script);
+    // Garante que o script só seja injetado uma vez
+    if (containerRef.current && containerRef.current.children.length === 0) {
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.async = true;
+      // O link exato do seu código:
+      script.src = "https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqpCJGtCZGcT3qmV35y6JuPlXez3Ly6puSdBuOc1WJD1wOc1WO61Ctdg4tjxMG9pUxapkUcvCu7gCmjZcoapOUcPCvdfQOW?v=dvkaB1OlzzcrE7hBPH92vdqwtlKbEXQ5SQnPqgkpHco#";
+      
+      containerRef.current.appendChild(script);
+    }
   }, []);
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      <style>{`
-        .vagaro-host .vagaro a { display: none !important; }
-        .vagaro-host iframe { width: 100% !important; max-width: 100% !important; border: 0; }
-        .vagaro-host * { font-family: inherit !important; }
-      `}</style>
-      <div className="vagaro-host bg-card/40 border border-gold/20 rounded-sm p-6">
-        <div className="embedded-widget-title font-display text-[10px] tracking-[0.4em] text-gold/80 mb-4 text-center">
-          BOOK NOW
-        </div>
-        <div ref={ref} className="vagaro" />
+    <div className="w-full flex flex-col items-center">
+      {/* TÍTULO EXATO DO SEU CÓDIGO */}
+      <div 
+        id="frameTitle" 
+        className="embedded-widget-title" 
+        style={{
+          fontSize: '23px', 
+          color: '#333',
+          fontFamily: 'Arial, Helvetica, sans-serif', 
+          lineHeight: '24px', 
+          padding: '18px 10px 8px', 
+          textAlign: 'center', 
+          boxSizing: 'border-box'
+        }}
+      >
+        Book Now
+      </div>
+
+      {/* CONTAINER EXATO DO SEU CÓDIGO */}
+      <div 
+        className="vagaro" 
+        style={{
+          width: '250px', 
+          padding: 0, 
+          border: 0, 
+          margin: '0 auto', 
+          textAlign: 'center'
+        }}
+      >
+        <style>{`.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}`}</style>
+        
+        {/* AQUI É ONDE O CALENDÁRIO VAI RENDERIZAR */}
+        <div ref={containerRef}></div>
+        
+        {/* LINKS EXATOS DO SEU CÓDIGO */}
+        <a href="https://www.vagaro.com/pro/">Powered by Vagaro</a>&nbsp;
+        <a href="https://www.vagaro.com/pro/salon-software">Salon Software</a>,&nbsp;
+        <a href="https://www.vagaro.com/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;
+        <a href="https://www.vagaro.com/pro/fitness-software">Fitness Software</a>
       </div>
     </div>
   );

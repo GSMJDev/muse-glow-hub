@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
-import logo from "@/assets/muse-logo-horizontal.png";
+import { Link, useLocation } from "@tanstack/react-router";
+
+// 1. IMPORTAMOS AS DUAS LOGOS AQUI:
+import logoDark from "@/assets/muse-logo-horizontal.png";
+import logoWhite from "@/assets/muse-logo-white.png";
 
 const links = [
   { to: "/about", label: "About Us" },
@@ -16,6 +19,10 @@ const links = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
+  // Pegamos a rota atual para saber se estamos na Home
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -26,18 +33,19 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 inset-x-0 z-[999] transition-all duration-500 ${
         scrolled ? "glass border-b border-gold/15" : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3">
+          {/* 2. A MÁGICA DA LOGO: Se for Home e não escrolou = Branca. Senão = Escura/Horizontal */}
           <img
-            src={logo}
+            src={isHome && !scrolled ? logoWhite : logoDark}
             alt="Muse Aesthetics & Spa by Missi"
             width={480}
             height={160}
-            className="h-24 md:h-28 lg:h-32 w-auto [image-rendering:auto] drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)]"
+            className="h-24 md:h-28 lg:h-32 w-auto [image-rendering:auto] drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)] transition-all duration-300"
           />
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
@@ -46,7 +54,11 @@ export function Header() {
               key={l.to}
               to={l.to}
               activeProps={{ className: "text-gold" }}
-              className="text-[10px] uppercase tracking-[0.2em] text-foreground/80 hover:text-gold transition-colors whitespace-nowrap"
+              className={`text-[10px] uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
+                isHome && !scrolled 
+                  ? "text-white/95 hover:text-white" 
+                  : "text-foreground/80 hover:text-gold"
+              }`}
             >
               {l.label}
             </Link>
@@ -55,14 +67,16 @@ export function Header() {
         <div className="flex items-center gap-4">
           <Link
             to="/book"
-            className="hidden sm:inline-flex items-center justify-center px-6 py-3 text-[11px] uppercase tracking-[0.25em] text-background gold-gradient hover:opacity-90 transition-all rounded-sm"
+            className="hidden sm:inline-flex items-center justify-center px-6 py-3 text-[11px] uppercase tracking-[0.25em] text-background gold-gradient hover:opacity-90 transition-all rounded-sm shadow-sm"
           >
             Book Now
           </Link>
           <button
             aria-label="Menu"
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden text-gold p-2"
+            className={`lg:hidden p-2 transition-colors ${
+              isHome && !scrolled ? "text-white" : "text-gold"
+            }`}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               {open ? <path d="M6 6l12 12M6 18L18 6"/> : <path d="M4 7h16M4 12h16M4 17h16"/>}
@@ -70,6 +84,8 @@ export function Header() {
           </button>
         </div>
       </div>
+      
+      {/* Menu Mobile */}
       {open && (
         <div className="lg:hidden glass border-t border-gold/10 px-6 py-6 flex flex-col gap-4">
           {links.map((l) => (
