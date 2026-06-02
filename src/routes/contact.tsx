@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { SectionLabel } from "@/components/muse/Footer";
 import { VagaroWidget } from '@/components/muse/VagaroWidget';
 
@@ -42,6 +42,8 @@ function ContactPage() {
               </a>
             </div>
           </div>
+          
+          {/* Formulário integrado com Formspree */}
           <ContactForm />
         </div>
 
@@ -70,59 +72,78 @@ function ContactPage() {
 }
 
 function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
+  const [state, handleSubmit] = useForm("maqkrajd");
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim() || !email.trim() || !message.trim()) return;
-    const subject = encodeURIComponent(`Inquiry from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:hello@mizzmissi.com?subject=${subject}&body=${body}`;
-    setSent(true);
-  };
+  // Mantém o mesmo container visual, mas mostra o feedback de sucesso de forma sutil
+  if (state.succeeded) {
+    return (
+      <div className="p-8 border border-gold/20 rounded-sm bg-card/40 flex flex-col justify-center items-center text-center gap-3 min-h-[340px]">
+        <h2 className="font-display text-[10px] tracking-[0.3em] text-gold uppercase">THANK YOU</h2>
+        <p className="text-sm text-foreground/80 max-w-xs leading-relaxed">
+          Your message has been sent. Missi will review your inquiry and get in touch shortly.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <form
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
       className="p-8 border border-gold/20 rounded-sm bg-card/40 flex flex-col gap-4"
     >
       <h2 className="font-display text-[10px] tracking-[0.3em] text-gold mb-1">SEND A MESSAGE</h2>
-      <input
-        type="text"
-        placeholder="Your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        maxLength={100}
-        required
-        className="bg-transparent border-b border-gold/30 px-1 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-gold"
-      />
-      <input
-        type="email"
-        placeholder="Email address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        maxLength={255}
-        required
-        className="bg-transparent border-b border-gold/30 px-1 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-gold"
-      />
-      <textarea
-        placeholder="How can we help?"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        maxLength={1000}
-        required
-        rows={5}
-        className="bg-transparent border-b border-gold/30 px-1 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-gold resize-none"
-      />
+      
+      <div>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Your name"
+          maxLength={100}
+          required
+          className="w-full bg-transparent border-b border-gold/30 px-1 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-gold"
+        />
+        <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-400 text-xs mt-1 block" />
+      </div>
+
+      <div>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="Email address"
+          maxLength={255}
+          required
+          className="w-full bg-transparent border-b border-gold/30 px-1 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-gold"
+        />
+        <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs mt-1 block" />
+      </div>
+
+      <div>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="How can we help?"
+          maxLength={1000}
+          required
+          rows={5}
+          className="w-full bg-transparent border-b border-gold/30 px-1 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-gold resize-none"
+        />
+        <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-xs mt-1 block" />
+      </div>
+
       <button
         type="submit"
-        className="mt-2 inline-flex items-center justify-center px-8 py-3 text-[11px] uppercase tracking-[0.3em] text-background gold-gradient rounded-sm hover:opacity-90 transition-all"
+        disabled={state.submitting}
+        className="mt-2 inline-flex items-center justify-center px-8 py-3 text-[11px] uppercase tracking-[0.3em] text-background gold-gradient rounded-sm hover:opacity-90 transition-all disabled:opacity-50"
       >
-        {sent ? "Sent ✓" : "Send"}
+        {state.submitting ? "Sending..." : "Send"}
       </button>
+      {state.errors && (
+        <p className="text-red-400 text-[11px] text-center tracking-wider uppercase mt-1">
+           Error sending. Please try again.
+        </p>
+      )}
     </form>
   );
 }

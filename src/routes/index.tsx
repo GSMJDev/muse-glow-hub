@@ -38,10 +38,10 @@ function Index() {
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 pt-8 pb-12">
           <h1 className="flex flex-col">
             <span className="font-serif text-[clamp(4rem,10vw,8rem)] text-white/95 leading-[1] select-none drop-shadow-lg pb-1">
-              Your Glow
+              Your Beauty is
             </span>
             <span className="font-serif italic text-[clamp(3rem,8vw,6rem)] text-gold-gradient leading-[1] -mt-6 md:-mt-10 relative z-10 drop-shadow-lg pb-6">
-              Our Signature
+              our Greatest Inspiration
             </span>
           </h1>
 
@@ -101,8 +101,7 @@ function Index() {
             <em className="italic font-light">in perfect balance.</em>
           </h2>
           <p className="mt-10 text-foreground/75 text-base md:text-lg leading-relaxed">
-            A welcoming sanctuary in Shrewsbury, MA where dedicated care meets results-driven
-            aesthetics.
+            A premier aesthetic clinic in Shrewsbury, MA, where dedicated care meets results-driven treatments.
           </p>
           <Link
             to="/about"
