@@ -2,6 +2,37 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
 import { GoogleReviews } from "@/components/muse/GoogleReviews";
 
+// IMPORTAÇÕES ANTIGAS (Mantidas as que não foram substituídas)
+import imgPeelingRosto from "@/assets/peelingdorosto.jpeg";
+import imgMascaraFacial from "@/assets/mascarafacial.jpg";
+import imgMassagemCostas from "@/assets/massagemcostas.jpeg";
+import imgCintura from "@/assets/cintura.jpeg";
+import imgBarrigaMassagem2 from "@/assets/barrigamassagem-2.jpeg";
+import imgMascaraTerrosa from "@/assets/mascarafacialterrosa.jpg";
+import imgLaserRostoDois from "@/assets/lasernorostodois.jpg";
+import imgMassagemPerna from "@/assets/massagemperna.jpeg";
+
+// IMPORTAÇÕES GERAIS
+import imgDeepCleaningMissi from "@/assets/DeepCleaningFacialMuseByMissi.jpeg";
+import imgLedLamp from "@/assets/ledlamp.jpeg";
+import imgDermaplaning from "@/assets/DermaplaningGlowWDeepfacialCleaning.jpeg";
+import imgMicroNeedlingOne from "@/assets/Micro-needlingFacialoneession.jpeg";
+import imgMicroNeedlingThree from "@/assets/Micro-NeedlingFacialPackagethreeessions.jpeg";
+import imgLowerLegWax from "@/assets/LowerLegWax.jpeg";
+import imgHydragloss from "@/assets/HydraglossLipsHydration.jpeg";
+import imgIPLHalfLegs from "@/assets/IPLHairRemoval-HalfLegs.jpeg";
+
+// IMPORTAÇÕES DA DEPILAÇÃO
+import imgUpperLipWax from "@/assets/UpperLipWax.jpeg";
+import imgFullLeggWax from "@/assets/FullLeggWax.jpeg";
+import imgArmpitWax from "@/assets/ArmpitWax.jpeg";
+import imgBackBikiniBraz from "@/assets/BackWaxBikiniWaxFullBrazilianWax.jpeg"; // Assumindo que você tirou o espaço lá na pasta!
+
+// NOVAS IMPORTAÇÕES DO ÚLTIMO PRINT
+import imgAdvancedAge from "@/assets/AdvancedAge.jpeg";
+import imgAcneDefense from "@/assets/AcneDefense.jpeg";
+import imgPeelingVitaminC from "@/assets/PeelingVitaminC.jpeg";
+
 const VAGARO_LINK = "https://www.vagaro.com/mizzmissiaesthetics";
 
 const categoryImage: Record<string, string> = {
@@ -24,7 +55,7 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
-type Service = { title: string; duration?: string; price?: string; desc?: string };
+type Service = { title: string; duration?: string; price?: string; desc?: string; image?: string };
 type Category = { id: string; label: string; intro?: string; items: Service[] };
 
 const categories: Category[] = [
@@ -32,45 +63,45 @@ const categories: Category[] = [
     id: "facial",
     label: "Facial",
     items: [
-      { title: "Deep Cleaning Facial Mizz Missi", duration: "1h", price: "$95", desc: "Experience a relaxing Deep Cleansing Facial at Mizz Missi. Tailored to your skin, it includes cleansing, exfoliation, steam, massage, gentle extraction, purifying mask, and hydration for radiant, revitalized skin, providing a moment of deep relaxation as well." },
-      { title: "Deep Cleaning Facial w/ LED Lamp", duration: "1h", price: "$120", desc: "Discover skin rejuvenation with our Deep Cleansing Facial with LED Lamp. Combining deep cleansing and LED light therapy, this treatment eliminates impurities, unclogs pores, and promotes a radiant appearance. Benefit from LED light therapy to reduce inflammation, stimulate collagen, and enhance skin clarity." },
-      { title: "Deep Cleaning Facial w/ Dermaplaning", duration: "1h", price: "$140", desc: "Unlock the secret to radiant skin with dermaplaning. This gentle and painless esthetic procedure uses a surgical blade to unveil smoother, more luminous skin instantly. Remove surface layers to diminish fine lines, eliminate facial hair, and promote a visibly rejuvenated appearance." },
-      { title: "Algae Peeling (Organic Peeling)", duration: "50 min", price: "$120", desc: "Algae peeling provides skin brightening, rejuvenation, cellular renewal, inflammation reduction, analgesic, anti-inflammatory and bactericidal effects — acne fighting, reduction of pigment spots, scars, and stretch marks, plus improved blood circulation." },
-      { title: "Microdermabrasion w/ Facial", duration: "1h 20min", price: "$120", desc: "Microdermabrasion is your key to incredibly smooth, radiant, and renewed skin. Remove impurities, smooth fine lines, and reduce dark spots and enlarged pores. Transform your skin with this revolutionary treatment and enjoy a radiant appearance." },
-      { title: "Microneedling Facial (1 Session)", duration: "1h 20min", price: "$180", desc: "A cosmetic procedure using tiny needles to stimulate collagen and elastin production in the skin. Benefits include improved texture, reduction of wrinkles, acne scars, enlarged pores, and dark spots, as well as treatment for stretch marks." },
-      { title: "Microneedling Facial (Package · 3 Sessions)", duration: "1h 20min", price: "$499" },
+      { title: "Deep Cleaning Facial Mizz Missi", duration: "1h", price: "$95", desc: "Experience a relaxing Deep Cleansing Facial at Mizz Missi. Tailored to your skin, it includes cleansing, exfoliation, steam, massage, gentle extraction, purifying mask, and hydration for radiant, revitalized skin.", image: imgDeepCleaningMissi },
+      { title: "Deep Cleaning Facial w/ LED Lamp", duration: "1h", price: "$120", desc: "Discover skin rejuvenation with our Deep Cleansing Facial with LED Lamp. Combining deep cleansing and LED light therapy, this treatment eliminates impurities, unclogs pores, and promotes a radiant appearance.", image: imgLedLamp },
+      { title: "Deep Cleaning Facial w/ Dermaplaning", duration: "1h", price: "$140", desc: "Unlock the secret to radiant skin with dermaplaning. This gentle and painless esthetic procedure uses a surgical blade to unveil smoother, more luminous skin instantly.", image: imgDermaplaning },
+      { title: "Algae Peeling (Organic Peeling)", duration: "50 min", price: "$120", desc: "Algae peeling provides skin brightening, rejuvenation, cellular renewal, inflammation reduction, analgesic, anti-inflammatory and bactericidal effects.", image: imgPeelingRosto },
+      { title: "Microdermabrasion w/ Facial", duration: "1h 20min", price: "$120", desc: "Microdermabrasion is your key to incredibly smooth, radiant, and renewed skin. Remove impurities, smooth fine lines, and reduce dark spots and enlarged pores.", image: imgMascaraFacial },
+      { title: "Microneedling Facial (1 Session)", duration: "1h 20min", price: "$180", desc: "A cosmetic procedure using tiny needles to stimulate collagen and elastin production in the skin.", image: imgMicroNeedlingOne },
+      { title: "Microneedling Facial (Package · 3 Sessions)", duration: "1h 20min", price: "$499", image: imgMicroNeedlingThree },
     ],
   },
   {
     id: "waxing",
     label: "Waxing",
     intro:
-      "Experience the sensation of smooth, hair-free skin with our waxing services. Our gentle New Concept wax, specially formulated for sensitive skin, provides a comfortable and effective hair removal experience — long-lasting results with minimal irritation, in our welcoming environment.",
+      "Experience the sensation of smooth, hair-free skin with our waxing services. Our gentle New Concept wax, specially formulated for sensitive skin, provides a comfortable and effective hair removal experience.",
     items: [
-      { title: "Upper Lip Wax", duration: "15 min", price: "$15" },
-      { title: "Armpit Wax", duration: "30 min", price: "$20" },
-      { title: "Lower Leg Wax", duration: "30 min", price: "$30" },
-      { title: "Bikini Wax", duration: "30 min", price: "$35" },
-      { title: "Back Wax", duration: "30 min", price: "$55" },
-      { title: "Full Leg Wax", duration: "50 min", price: "$55" },
-      { title: "Full Brazilian Wax", duration: "45 min", price: "$65" },
+      { title: "Upper Lip Wax", duration: "15 min", price: "$15", image: imgUpperLipWax },
+      { title: "Armpit Wax", duration: "30 min", price: "$20", image: imgArmpitWax },
+      { title: "Lower Leg Wax", duration: "30 min", price: "$30", image: imgLowerLegWax },
+      { title: "Bikini Wax", duration: "30 min", price: "$35", image: imgBackBikiniBraz },
+      { title: "Back Wax", duration: "30 min", price: "$55", image: imgBackBikiniBraz },
+      { title: "Full Leg Wax", duration: "50 min", price: "$55", image: imgFullLeggWax },
+      { title: "Full Brazilian Wax", duration: "45 min", price: "$65", image: imgBackBikiniBraz },
     ],
   },
   {
     id: "corporal",
     label: "Corporal",
     items: [
-      { title: "Body Relaxing Treatment", duration: "1h 20min", price: "$75", desc: "A back relaxation for tension relief and overall well-being. Our skilled professionals use gentle techniques to relax muscles, providing immediate relief from pain and stiffness, improving circulation, reducing stress and enhancing sleep quality." },
-      { title: "Body Contour Brazilian", duration: "1h 20min", price: "$130", desc: "An advanced body treatment combining contouring techniques to sculpt the abdomen, buttocks, thighs, and arms. Reduces cellulite, improves skin firmness, and shapes the body." },
-      { title: "Body Contour Detox w/ Thermal Blanket", duration: "1h 20min", price: "$130", desc: "Detox treatment with a thermal blanket using far infrared heat to release toxins. Reduced measurements, healthier skin, relief from muscle pain — while relaxing and strengthening your immune system." },
+      { title: "Body Relaxing Treatment", duration: "1h 20min", price: "$75", desc: "A back relaxation for tension relief and overall well-being. Our skilled professionals use gentle techniques to relax muscles.", image: imgMassagemCostas },
+      { title: "Body Contour Brazilian", duration: "1h 20min", price: "$130", desc: "An advanced body treatment combining contouring techniques to sculpt the abdomen, buttocks, thighs, and arms.", image: imgCintura },
+      { title: "Body Contour Detox w/ Thermal Blanket", duration: "1h 20min", price: "$130", desc: "Detox treatment with a thermal blanket using far infrared heat to release toxins. Reduced measurements, healthier skin.", image: imgBarrigaMassagem2 },
     ],
   },
   {
     id: "chemical-peel",
     label: "Chemical Peel",
     items: [
-      { title: "Chemical Peel for Acne", desc: "An advanced treatment with a unique combination of gentle acids and botanical ingredients that deeply penetrate pores, eliminating impurities and excess oil. Reduces acne and inflammation while minimizing scars and dark spots for a clearer, more even complexion." },
-      { title: "Chemical Peel Dark Spots (Pigmentation)", desc: "An effective solution for hyperpigmentation and uneven skin tone. A unique formula of exfoliating acids and brightening agents that diminishes dark spots and unveils a more radiant, even, and revitalized complexion." },
+      { title: "Chemical Peel for Acne", desc: "An advanced treatment with a unique combination of gentle acids and botanical ingredients that deeply penetrate pores, eliminating impurities and excess oil.", image: imgMascaraTerrosa },
+      { title: "Chemical Peel Dark Spots (Pigmentation)", desc: "An effective solution for hyperpigmentation and uneven skin tone. A unique formula of exfoliating acids and brightening agents.", image: imgPeelingRosto },
     ],
   },
   {
@@ -78,13 +109,14 @@ const categories: Category[] = [
     label: "Service +",
     intro: "Additional treatments available — ask us for details when booking.",
     items: [
-      { title: "Deep Collagen Stimulation" },
-      { title: "Lymphatic Drainage Detox with Hot Blanket" },
-      { title: "Peel Vit C" },
-      { title: "Hydragloss" },
-      { title: "Advanced Age" },
+      { title: "Deep Collagen Stimulation", image: imgLaserRostoDois },
+      { title: "Lymphatic Drainage Detox with Hot Blanket", image: imgMassagemPerna },
+      { title: "Peel Vit C", image: imgPeelingVitaminC }, // Adicionado aqui
+      { title: "Hydragloss", image: imgHydragloss },
+      { title: "IPL Hair Removal - Half Legs", image: imgIPLHalfLegs },
+      { title: "Advanced Age", image: imgAdvancedAge }, // Adicionado aqui
       { title: "Jessner" },
-      { title: "Acne Defense" },
+      { title: "Acne Defense", image: imgAcneDefense }, // Adicionado aqui
       { title: "Teen Facial" },
     ],
   },
@@ -116,9 +148,9 @@ function ServiceCard({ s, image }: { s: Service; image: string }) {
       rel="noopener noreferrer"
       className="group block bg-card/50 border border-gold/15 rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:border-gold/50"
     >
-      <div className="w-full h-48 overflow-hidden">
+      <div className="w-full h-64 overflow-hidden">
         <img
-          src={image}
+          src={s.image || image}
           alt={s.title}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -215,9 +247,9 @@ function ServicesPage() {
                         rel="noopener noreferrer"
                         className="group block bg-card/40 border border-gold/15 rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:border-gold/50"
                       >
-                        <div className="w-full h-32 overflow-hidden">
+                        <div className="w-full h-48 overflow-hidden">
                           <img
-                            src={categoryImage[cat.id]}
+                            src={s.image || categoryImage[cat.id]}
                             alt={s.title}
                             loading="lazy"
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

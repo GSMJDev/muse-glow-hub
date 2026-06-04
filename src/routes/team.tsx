@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
+
+// AQUI: Alterado de .png para .jpeg. Se não for, teste .jpg!
 import fernandaImg from "@/assets/fernanda.png";
 import micheleImg from "@/assets/michele.png";
+import krystalImg from "@/assets/krystal.jpeg";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
@@ -30,6 +33,12 @@ const team: Member[] = [
     role: "Licensed Esthetician",
     src: micheleImg,
     bio: "Michele Lopes is a licensed esthetician in Massachusetts and a Medical Assistant student, specializing in waxing, IPL hair removal, and personalized facial treatments. With a detail-oriented and client-centered approach, she is dedicated to providing safe, comfortable, and professional experiences that help every client feel confident and well cared for.",
+  },
+  {
+    name: "Krystal Vitorino",
+    role: "Administrative Assistant | Muse By Missi",
+    src: krystalImg,
+    bio: "Hello! My name is Krystal Vitorino, and I help with some of the administrative tasks at Muse by Missi Spa, making sure everything runs smoothly behind the scenes. I’m a fun, friendly, and kind person who loves creating a welcoming atmosphere for our clients. Whether you’re visiting for the first time or returning for another appointment, I’m always happy to greet you with a smile and help however I can. I look forward to welcoming you to Muse by Missi Spa anytime!",
   },
 ];
 
