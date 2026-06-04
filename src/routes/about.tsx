@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
 
+// IMPORTAÇÃO DA IMAGEM DE FUNDO
+import aboutBg from "@/assets/aboutus.jpeg";
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -15,8 +18,21 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <section className="pt-40 pb-28 md:pb-40 px-6">
-      <div className="mx-auto max-w-4xl text-center">
+    <section className="relative pt-40 pb-28 md:pb-40 px-6 overflow-hidden">
+      
+      {/* CAMADA DE FUNDO COM A IMAGEM */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none">
+        <img
+          src={aboutBg}
+          alt="About Background"
+          loading="lazy"
+          className="w-full h-full object-cover opacity-60" 
+        />
+        <div className="absolute inset-0 bg-background/40 bg-gradient-to-b from-background via-transparent to-background" />
+      </div>
+
+      {/* CONTEÚDO PRINCIPAL */}
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
         <SectionLabel>ABOUT US</SectionLabel>
         <h1 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl text-gold-gradient leading-tight">
           Beauty and wellness<br />

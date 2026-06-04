@@ -26,14 +26,14 @@ import imgIPLHalfLegs from "@/assets/IPLHairRemoval-HalfLegs.jpeg";
 import imgUpperLipWax from "@/assets/UpperLipWax.jpeg";
 import imgFullLeggWax from "@/assets/FullLeggWax.jpeg";
 import imgArmpitWax from "@/assets/ArmpitWax.jpeg";
-import imgBackBikiniBraz from "@/assets/BackWaxBikiniWaxFullBrazilianWax.jpeg"; // Assumindo que você tirou o espaço lá na pasta!
+import imgBackBikiniBraz from "@/assets/BackWaxBikiniWaxFullBrazilianWax.jpeg"; 
 
-// NOVAS IMPORTAÇÕES DO ÚLTIMO PRINT
+// NOVAS IMPORTAÇÕES
 import imgAdvancedAge from "@/assets/AdvancedAge.jpeg";
 import imgAcneDefense from "@/assets/AcneDefense.jpeg";
 import imgPeelingVitaminC from "@/assets/PeelingVitaminC.jpeg";
 
-const VAGARO_LINK = "https://www.vagaro.com/mizzmissiaesthetics";
+const VAGARO_LINK = "https://www.vagaro.com/mizzmissiaesthetics/book-now";
 
 const categoryImage: Record<string, string> = {
   facial: "https://source.unsplash.com/800x600/?facial,skincare",
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
-type Service = { title: string; duration?: string; price?: string; desc?: string; image?: string };
+type Service = { title: string; duration?: string; price?: string; desc?: string; image?: string; link?: string };
 type Category = { id: string; label: string; intro?: string; items: Service[] };
 
 const categories: Category[] = [
@@ -111,12 +111,12 @@ const categories: Category[] = [
     items: [
       { title: "Deep Collagen Stimulation", image: imgLaserRostoDois },
       { title: "Lymphatic Drainage Detox with Hot Blanket", image: imgMassagemPerna },
-      { title: "Peel Vit C", image: imgPeelingVitaminC }, // Adicionado aqui
+      { title: "Peel Vit C", image: imgPeelingVitaminC },
       { title: "Hydragloss", image: imgHydragloss },
       { title: "IPL Hair Removal - Half Legs", image: imgIPLHalfLegs },
-      { title: "Advanced Age", image: imgAdvancedAge }, // Adicionado aqui
+      { title: "Advanced Age", image: imgAdvancedAge },
       { title: "Jessner" },
-      { title: "Acne Defense", image: imgAcneDefense }, // Adicionado aqui
+      { title: "Acne Defense", image: imgAcneDefense },
       { title: "Teen Facial" },
     ],
   },
@@ -143,7 +143,7 @@ function PriceTag({ duration, price }: { duration?: string; price?: string }) {
 function ServiceCard({ s, image }: { s: Service; image: string }) {
   return (
     <a
-      href={VAGARO_LINK}
+      href={s.link || VAGARO_LINK}
       target="_blank"
       rel="noopener noreferrer"
       className="group block bg-card/50 border border-gold/15 rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:border-gold/50"
@@ -242,7 +242,7 @@ function ServicesPage() {
                     cat.id === "more" ? (
                       <a
                         key={s.title}
-                        href={VAGARO_LINK}
+                        href={s.link || VAGARO_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group block bg-card/40 border border-gold/15 rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:border-gold/50"
@@ -272,31 +272,6 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section
-        className="py-12 px-6 border-y border-gold/15"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent, oklch(0.18 0.06 18 / 0.4), transparent)",
-        }}
-      >
-        <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-          <span className="font-display text-[10px] tracking-[0.4em] text-gold">
-            FLEXIBLE FINANCING
-          </span>
-          <p className="font-serif text-xl md:text-2xl text-foreground/90 italic">
-            Treat now, pay later with{" "}
-            <span className="text-gold-gradient not-italic font-medium">Cherry</span>.
-          </p>
-          <a
-            href="https://stan.store/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 text-[10px] uppercase tracking-[0.3em] text-gold border border-gold/40 rounded-sm hover:bg-gold/10 transition-all"
-          >
-            Shop on Stan.Store →
-          </a>
-        </div>
-      </section>
       <GoogleReviews />
     </>
   );
