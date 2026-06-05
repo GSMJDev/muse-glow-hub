@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
 
-// 1. IMPORTAMOS AS DUAS LOGOS AQUI:
 import logoDark from "@/assets/muse-logo-horizontal.png";
 import logoWhite from "@/assets/muse-logo-white.png";
 
@@ -20,7 +19,6 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   
-  // Pegamos a rota atual para saber se estamos na Home
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -38,14 +36,13 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-3">
-          {/* 2. A MÁGICA DA LOGO: Se for Home e não escrolou = Branca. Senão = Escura/Horizontal */}
+        <Link to="/" className="flex items-center -ml-2 md:-ml-4 lg:-ml-6">
           <img
             src={isHome && !scrolled ? logoWhite : logoDark}
             alt="Muse Aesthetics & Spa by Missi"
             width={480}
             height={160}
-            className="h-24 md:h-28 lg:h-32 w-auto [image-rendering:auto] drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)] transition-all duration-300"
+            className="h-16 md:h-20 w-auto object-contain scale-[1.3] md:scale-[1.5] lg:scale-[1.85] origin-left [image-rendering:auto] drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)] transition-all duration-300"
           />
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
@@ -85,7 +82,6 @@ export function Header() {
         </div>
       </div>
       
-      {/* Menu Mobile */}
       {open && (
         <div className="lg:hidden glass border-t border-gold/10 px-6 py-6 flex flex-col gap-4">
           {links.map((l) => (

@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
 import heroImg from "@/assets/hero-facial.jpeg";
 import { VagaroWidget } from '@/components/muse/VagaroWidget';
-import { GoogleReviews } from '@/components/muse/GoogleReviews'; // Importando nosso novo widget!
+import { GoogleReviews } from '@/components/muse/GoogleReviews';
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,10 +37,12 @@ function Index() {
 
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 pt-8 pb-12">
           <h1 className="flex flex-col">
-            <span className="font-serif text-[clamp(4rem,10vw,8rem)] text-white/95 leading-[1] select-none drop-shadow-lg pb-1">
+            {/* AQUI: Apenas leading-none, sem margem inventada */}
+            <span className="font-serif text-[clamp(3rem,6vw,5rem)] text-white/95 leading-none select-none drop-shadow-lg">
               Your Beauty is
             </span>
-            <span className="font-serif italic text-[clamp(3rem,8vw,6rem)] text-gold-gradient leading-[1] -mt-6 md:-mt-10 relative z-10 drop-shadow-lg pb-6">
+            {/* AQUI: Tirei a margem negativa assassina! Deixei só leading-none e mt-1 pra um respiro de 4px */}
+            <span className="font-serif italic text-[clamp(2.25rem,5vw,4rem)] text-gold-gradient leading-none mt-1 relative z-10 drop-shadow-lg pb-6">
               our Greatest Inspiration
             </span>
           </h1>

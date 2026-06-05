@@ -4,7 +4,7 @@ import { GoogleReviews } from "@/components/muse/GoogleReviews";
 
 // IMPORTAÇÕES ANTIGAS (Mantidas as que não foram substituídas)
 import imgPeelingRosto from "@/assets/peelingdorosto.jpeg";
-import imgMascaraFacial from "@/assets/mascarafacial.jpg";
+import imgMascaraFacial from "@/assets/mascarafacial.jpeg";
 import imgMassagemCostas from "@/assets/massagemcostas.jpeg";
 import imgCintura from "@/assets/cintura.jpeg";
 import imgBarrigaMassagem2 from "@/assets/barrigamassagem-2.jpeg";
@@ -32,8 +32,69 @@ import imgBackBikiniBraz from "@/assets/BackWaxBikiniWaxFullBrazilianWax.jpeg";
 import imgAdvancedAge from "@/assets/AdvancedAge.jpeg";
 import imgAcneDefense from "@/assets/AcneDefense.jpeg";
 import imgPeelingVitaminC from "@/assets/PeelingVitaminC.jpeg";
+import imgTeenFacial from "@/assets/TeenFacial.jpeg";
 
 const VAGARO_LINK = "https://www.vagaro.com/mizzmissiaesthetics/book-now";
+
+// Dicionário de links diretos do Vagaro gerado a partir da sua lista
+const VAGARO_LINKS = {
+  skinAssessment: "https://www.vagaro.com/cl/iPUUoMiNTENNwaEuCGUrQ4~2n~4YQlytJUxy-2-IzOY=",
+  deepCleaningFacialMissi: "https://www.vagaro.com/cl/e3XTbPwag6j6mnd8dPjQLJq06YepsqJLq203QvXln8w=",
+  teenClearSkin: "https://www.vagaro.com/cl/rpgo8HhL65SU0FN2r~Z2f0GUxYdl5hUzkN-Mtg9xfy4=",
+  dermaplaningGlowDeepCleaning: "https://www.vagaro.com/cl/E55Ji14rXvQK-hw2h8afLIlGOzi3igi0B24b-erf8Aw=",
+  ledLamp: "https://www.vagaro.com/cl/XYJd1OBP5FKtbPYpBaRgR1sjvF9qVdrTM5kPtI5t69A=",
+  diamondGlowDeepFacial: "https://www.vagaro.com/cl/ikOUzFpTtiEFUUQC9ilx8WiUCqOwr5aOpHewu7iQbSY=",
+  acneDefense: "https://www.vagaro.com/cl/P~crthzreveRox1uELoecKM4Jpn0qk8nmMBOHrXMPuY=",
+  melasmaTreat: "https://www.vagaro.com/cl/ZNzbjDdgooMXIWfgM7KobY9hZPZnXyEtHBjrkw5VTbM=",
+  jessner: "https://www.vagaro.com/cl/FtmQYXnQyqG8zR3-94R4eEGf4XSzDgUEhRsPb39ydKI=",
+  advancedAge: "https://www.vagaro.com/cl/mvqTfgB3RPVyqcS8omr-eSdgaEGfB0Ul5fzJsZjhWVA=",
+  collagen: "https://www.vagaro.com/cl/lSVcRKYkEBhApcUdKT3ZgKPDYy0hyFO8GJNvTWSTCKA=",
+  microNeedlingFacial3Session: "https://www.vagaro.com/cl/fLIDgC5Tg1ab8w8CQyTJzFZvx9wg~XNsFNcxcHa8HZI=",
+  seaweedDetoxPeel: "https://www.vagaro.com/cl/v-OjtehJAYcp2wOpKGDj3ErsODoWcMBqSxnmy5-e57I=",
+  vitaminC: "https://www.vagaro.com/cl/~Qli9EMPlNINgfK6QFz7oft1I0PeNfcfIceq4Hyc7m0=",
+  deepCleaningGroupon: "https://www.vagaro.com/cl/GzRVhEne577ccTjxpXBW2YPfzv9OU2mw6fMjXYCIpv0=",
+  lipsHydragloss: "https://www.vagaro.com/cl/0wj6jPPcAIFXhGhxK632xzlAQaeJ8G9Rs~EMRKhUfr4=",
+  bodyContourBrazilian: "https://www.vagaro.com/cl/4Ne7167jFBjtJwZCGSpsYUdBlHS0xRJn1wWfuOM~3eI=",
+  lymphaticDrainage: "https://www.vagaro.com/cl/UOMqfMTnjKAxqDTI7Ua1luDVgJ3afHigCdUf0mdYRc4=",
+  bodyRelaxingTreatment: "https://www.vagaro.com/cl/Qm7kABTS385VLuZH9988IcJDkfXnvYeYsNJuWJQ4KKo=",
+  bodyContourDetox: "https://www.vagaro.com/cl/l8LRpvk1mwduOMM7VtwLPiTkyuDW8o1rF2yc~GCiqC4=",
+  backFacialExtractions: "https://www.vagaro.com/cl/jv65AnX37CYZDba-SfyyyiHSul5qE25oVKR4szaSzMQ=",
+  bodyTreatmentPeelAlgae: "https://www.vagaro.com/cl/msEWdl~4s5PuzZm4zbQgHpJ0L32KcN6Z4FPj~c2BoRs=",
+  stretchMarks: "https://www.vagaro.com/cl/Yntu9zt~P14280rGAZfrViuP52DiVNe4cnBsXQrqJrg=",
+  brighteningIntimateAreas: "https://www.vagaro.com/cl/6q3d6i~hA0BKVLBEE~3MEMLxM2gFf1hICT~i6A06m9k=",
+  detoxHotBlanket: "https://www.vagaro.com/cl/LHirH9Jb62Nj0vAeb36pKmgr0Qa5E3GNEdm-xxOqyR0=",
+  upperLipWax: "https://www.vagaro.com/cl/kumGRlgQ1m~HZddoQtr2nzU2vLe2rfsTqxbdU-RLrVQ=",
+  armpitWax: "https://www.vagaro.com/cl/Yofsa-vQACW~sSUQfISd-sBXKwRMwKJvp5m0wSfRLv8=",
+  backWax: "https://www.vagaro.com/cl/4rnD79K2hYOw7rXgWpzTaq88ZsYJoIyvx~qGsufalxw=",
+  bikiniWax: "https://www.vagaro.com/cl/wZsc5qsEvfqQUtCuzmjbstzmHT2Y5liEAWPLFljHc7A=",
+  fullBrazilianWax: "https://www.vagaro.com/cl/Jy4G6nGtpXyIY606BTCK9CUDEM0R~gbVEyQCdFPQ8yo=",
+  fullLegWax: "https://www.vagaro.com/cl/WGKjEE6cNzrq2VASoaauHe42RGqYsVhnjyuxvS7~wvc=",
+  lowerLegWax: "https://www.vagaro.com/cl/2YasF2kK2ALm3-JcjLrJxBp~E4gmaeFoSaP6~i7EoXU=",
+  eyebrowTweez: "https://www.vagaro.com/cl/IEhyqG8PDJtOIviJOIVgF915eEWCqKvviN4Bj1mk8ZQ=",
+  lashesClassic: "https://www.vagaro.com/cl/xcPfkdzyxRXr0lqYWJyGlYs0o9i-fBs-L0A45McNto4=",
+  lashesFillsClassic3Week: "https://www.vagaro.com/cl/cCm1tx~5GDgjxaAGVjnbCgrYm12Z~54nv4yUDzY6gbg=",
+  lashesBrazilian: "https://www.vagaro.com/cl/Y4NtX43cVNd2OR0Zy9P8DnZh9vic2xSpPhHyPapgZlQ=",
+  lashesFillsBrazilian: "https://www.vagaro.com/cl/O3US4MV-wHdtvy78roVfvQlutzvVZ-B85fHm6rCqFKs=",
+  lashesHybrid: "https://www.vagaro.com/cl/-Bp3FcA-10AkQxO1uEAiiDr24UKs6IA1eOCV8JRVW6g=",
+  lashesFillsHybrid: "https://www.vagaro.com/cl/sdIJIzEWwq4HwOI5DUJv4Cjto1zCLCET6j~LXmGMm5E=",
+  iplFullFace: "https://www.vagaro.com/cl/sjxVdsAvP~yWlKK5HkTKSQswVOhIVdpqlA~9pK04it4=",
+  iplLips: "https://www.vagaro.com/cl/nJnqEQLEjhFrmVWeaybIXjrw1lliM9wTHLneZ~EMq9U=",
+  iplChin: "https://www.vagaro.com/cl/CLoym3Z0Cc0qVOgRBI995DP~ZyUOWmUD6mgILNvmDno=",
+  iplLipAndChin: "https://www.vagaro.com/cl/9xjtaq62pkdqKVmV-~frOAWHj0-~jXt2c~IwAn170dw=",
+  iplSideBurns: "https://www.vagaro.com/cl/lIpQCrQ6D0w~MylFUFWaLxZA1hUc4rVCeZXCYfzB8Uk=",
+  iplUnderarms: "https://www.vagaro.com/cl/ZJ7nec4JCwxjOUFbBAJIPLMxLH8DSqqMy4zMyb2aCxc=",
+  iplFullArms: "https://www.vagaro.com/cl/gUNYn-hBCYKowJNwq~lbk1z5NDpVxjbUItgn-YmMozY=",
+  iplHalfArms: "https://www.vagaro.com/cl/szW75wPLp7mULV~4IiZLj-NGzHUe3i1sZvDFheXnWek=",
+  iplFullLegs: "https://www.vagaro.com/cl/OPpIQAqLPflAPlRvTrnU-5NvOZZMaBkIJPS5v62VODE=",
+  iplHalfLegs: "https://www.vagaro.com/cl/uhYSFbXNrOIKDoc486aYBOxnAeMinl7WEuNpx7JXdAc=",
+  iplChest: "https://www.vagaro.com/cl/5AAYIhtzK8oWU6MRhbrhiySGMRtlbpAhQbeqGUUazJU=",
+  iplAbdomen: "https://www.vagaro.com/cl/sf2xpwcYeDSnybWMmp9n44CJgPABKG1-F8dKLv9LS~M=",
+  iplFullBack: "https://www.vagaro.com/cl/kkOY1LYjJZpUEsU~LLWGxXKac6eT5WFh0n6IzHJ5xFk=",
+  iplSmallAreas: "https://www.vagaro.com/cl/Ue3ZjJuG4JaaV0h8tLaogUFl12~Z7yf~WXwMF5GWC~Q=",
+  iplBikini: "https://www.vagaro.com/cl/Mnuy956iAi6Bksed3vHWg7R~gGYSAFQRUixvehzKEtA=",
+  iplFullBrazilian: "https://www.vagaro.com/cl/RSEhQbdbzSIeLjTEPCsRyV2chSK6cub37XjsFYDZ~ug=",
+  iplComboUnderarmsBrazilian: "https://www.vagaro.com/cl/wFevv0yz8aDtoMens2e~lI-iEMhNxX1n2uQlsJ4fzfA="
+};
 
 const categoryImage: Record<string, string> = {
   facial: "https://source.unsplash.com/800x600/?facial,skincare",
@@ -63,13 +124,13 @@ const categories: Category[] = [
     id: "facial",
     label: "Facial",
     items: [
-      { title: "Deep Cleaning Facial Mizz Missi", duration: "1h", price: "$95", desc: "Experience a relaxing Deep Cleansing Facial at Mizz Missi. Tailored to your skin, it includes cleansing, exfoliation, steam, massage, gentle extraction, purifying mask, and hydration for radiant, revitalized skin.", image: imgDeepCleaningMissi },
-      { title: "Deep Cleaning Facial w/ LED Lamp", duration: "1h", price: "$120", desc: "Discover skin rejuvenation with our Deep Cleansing Facial with LED Lamp. Combining deep cleansing and LED light therapy, this treatment eliminates impurities, unclogs pores, and promotes a radiant appearance.", image: imgLedLamp },
-      { title: "Deep Cleaning Facial w/ Dermaplaning", duration: "1h", price: "$140", desc: "Unlock the secret to radiant skin with dermaplaning. This gentle and painless esthetic procedure uses a surgical blade to unveil smoother, more luminous skin instantly.", image: imgDermaplaning },
-      { title: "Algae Peeling (Organic Peeling)", duration: "50 min", price: "$120", desc: "Algae peeling provides skin brightening, rejuvenation, cellular renewal, inflammation reduction, analgesic, anti-inflammatory and bactericidal effects.", image: imgPeelingRosto },
-      { title: "Microdermabrasion w/ Facial", duration: "1h 20min", price: "$120", desc: "Microdermabrasion is your key to incredibly smooth, radiant, and renewed skin. Remove impurities, smooth fine lines, and reduce dark spots and enlarged pores.", image: imgMascaraFacial },
-      { title: "Microneedling Facial (1 Session)", duration: "1h 20min", price: "$180", desc: "A cosmetic procedure using tiny needles to stimulate collagen and elastin production in the skin.", image: imgMicroNeedlingOne },
-      { title: "Microneedling Facial (Package · 3 Sessions)", duration: "1h 20min", price: "$499", image: imgMicroNeedlingThree },
+      { title: "Deep Cleaning Facial Mizz Missi", duration: "1h", price: "$95", desc: "Experience a relaxing Deep Cleansing Facial at Mizz Missi. Tailored to your skin, it includes cleansing, exfoliation, steam, massage, gentle extraction, purifying mask, and hydration for radiant, revitalized skin.", image: imgDeepCleaningMissi, link: VAGARO_LINKS.deepCleaningFacialMissi },
+      { title: "Deep Cleaning Facial w/ LED Lamp", duration: "1h", price: "$120", desc: "Discover skin rejuvenation with our Deep Cleansing Facial with LED Lamp. Combining deep cleansing and LED light therapy, this treatment eliminates impurities, unclogs pores, and promotes a radiant appearance.", image: imgLedLamp, link: VAGARO_LINKS.ledLamp },
+      { title: "Deep Cleaning Facial w/ Dermaplaning", duration: "1h", price: "$140", desc: "Unlock the secret to radiant skin with dermaplaning. This gentle and painless esthetic procedure uses a surgical blade to unveil smoother, more luminous skin instantly.", image: imgDermaplaning, link: VAGARO_LINKS.dermaplaningGlowDeepCleaning },
+      { title: "Algae Peeling (Organic Peeling)", duration: "50 min", price: "$120", desc: "Algae peeling provides skin brightening, rejuvenation, cellular renewal, inflammation reduction, analgesic, anti-inflammatory and bactericidal effects.", image: imgPeelingRosto, link: VAGARO_LINKS.bodyTreatmentPeelAlgae },
+      { title: "Microdermabrasion w/ Facial", duration: "1h 20min", price: "$120", desc: "Microdermabrasion is your key to incredibly smooth, radiant, and renewed skin. Remove impurities, smooth fine lines, and reduce dark spots and enlarged pores.", image: imgMascaraFacial }, // Sem link direto
+      { title: "Microneedling Facial (1 Session)", duration: "1h 20min", price: "$180", desc: "A cosmetic procedure using tiny needles to stimulate collagen and elastin production in the skin.", image: imgMicroNeedlingOne }, // Sem link direto
+      { title: "Microneedling Facial (Package · 3 Sessions)", duration: "1h 20min", price: "$499", image: imgMicroNeedlingThree, link: VAGARO_LINKS.microNeedlingFacial3Session },
     ],
   },
   {
@@ -78,30 +139,30 @@ const categories: Category[] = [
     intro:
       "Experience the sensation of smooth, hair-free skin with our waxing services. Our gentle New Concept wax, specially formulated for sensitive skin, provides a comfortable and effective hair removal experience.",
     items: [
-      { title: "Upper Lip Wax", duration: "15 min", price: "$15", image: imgUpperLipWax },
-      { title: "Armpit Wax", duration: "30 min", price: "$20", image: imgArmpitWax },
-      { title: "Lower Leg Wax", duration: "30 min", price: "$30", image: imgLowerLegWax },
-      { title: "Bikini Wax", duration: "30 min", price: "$35", image: imgBackBikiniBraz },
-      { title: "Back Wax", duration: "30 min", price: "$55", image: imgBackBikiniBraz },
-      { title: "Full Leg Wax", duration: "50 min", price: "$55", image: imgFullLeggWax },
-      { title: "Full Brazilian Wax", duration: "45 min", price: "$65", image: imgBackBikiniBraz },
+      { title: "Upper Lip Wax", duration: "15 min", price: "$15", image: imgUpperLipWax, link: VAGARO_LINKS.upperLipWax },
+      { title: "Armpit Wax", duration: "30 min", price: "$20", image: imgArmpitWax, link: VAGARO_LINKS.armpitWax },
+      { title: "Lower Leg Wax", duration: "30 min", price: "$30", image: imgLowerLegWax, link: VAGARO_LINKS.lowerLegWax },
+      { title: "Bikini Wax", duration: "30 min", price: "$35", image: imgBackBikiniBraz, link: VAGARO_LINKS.bikiniWax },
+      { title: "Back Wax", duration: "30 min", price: "$55", image: imgBackBikiniBraz, link: VAGARO_LINKS.backWax },
+      { title: "Full Leg Wax", duration: "50 min", price: "$55", image: imgFullLeggWax, link: VAGARO_LINKS.fullLegWax },
+      { title: "Full Brazilian Wax", duration: "45 min", price: "$65", image: imgBackBikiniBraz, link: VAGARO_LINKS.fullBrazilianWax },
     ],
   },
   {
     id: "corporal",
     label: "Corporal",
     items: [
-      { title: "Body Relaxing Treatment", duration: "1h 20min", price: "$75", desc: "A back relaxation for tension relief and overall well-being. Our skilled professionals use gentle techniques to relax muscles.", image: imgMassagemCostas },
-      { title: "Body Contour Brazilian", duration: "1h 20min", price: "$130", desc: "An advanced body treatment combining contouring techniques to sculpt the abdomen, buttocks, thighs, and arms.", image: imgCintura },
-      { title: "Body Contour Detox w/ Thermal Blanket", duration: "1h 20min", price: "$130", desc: "Detox treatment with a thermal blanket using far infrared heat to release toxins. Reduced measurements, healthier skin.", image: imgBarrigaMassagem2 },
+      { title: "Body Relaxing Treatment", duration: "1h 20min", price: "$75", desc: "A back relaxation for tension relief and overall well-being. Our skilled professionals use gentle techniques to relax muscles.", image: imgMassagemCostas, link: VAGARO_LINKS.bodyRelaxingTreatment },
+      { title: "Body Contour Brazilian", duration: "1h 20min", price: "$130", desc: "An advanced body treatment combining contouring techniques to sculpt the abdomen, buttocks, thighs, and arms.", image: imgCintura, link: VAGARO_LINKS.bodyContourBrazilian },
+      { title: "Body Contour Detox w/ Thermal Blanket", duration: "1h 20min", price: "$130", desc: "Detox treatment with a thermal blanket using far infrared heat to release toxins. Reduced measurements, healthier skin.", image: imgBarrigaMassagem2, link: VAGARO_LINKS.bodyContourDetox },
     ],
   },
   {
     id: "chemical-peel",
     label: "Chemical Peel",
     items: [
-      { title: "Chemical Peel for Acne", desc: "An advanced treatment with a unique combination of gentle acids and botanical ingredients that deeply penetrate pores, eliminating impurities and excess oil.", image: imgMascaraTerrosa },
-      { title: "Chemical Peel Dark Spots (Pigmentation)", desc: "An effective solution for hyperpigmentation and uneven skin tone. A unique formula of exfoliating acids and brightening agents.", image: imgPeelingRosto },
+      { title: "Chemical Peel for Acne", desc: "An advanced treatment with a unique combination of gentle acids and botanical ingredients that deeply penetrate pores, eliminating impurities and excess oil.", image: imgMascaraTerrosa, link: VAGARO_LINKS.acneDefense },
+      { title: "Chemical Peel Dark Spots (Pigmentation)", desc: "An effective solution for hyperpigmentation and uneven skin tone. A unique formula of exfoliating acids and brightening agents.", image: imgPeelingRosto, link: VAGARO_LINKS.melasmaTreat },
     ],
   },
   {
@@ -109,15 +170,15 @@ const categories: Category[] = [
     label: "Service +",
     intro: "Additional treatments available — ask us for details when booking.",
     items: [
-      { title: "Deep Collagen Stimulation", image: imgLaserRostoDois },
-      { title: "Lymphatic Drainage Detox with Hot Blanket", image: imgMassagemPerna },
-      { title: "Peel Vit C", image: imgPeelingVitaminC },
-      { title: "Hydragloss", image: imgHydragloss },
-      { title: "IPL Hair Removal - Half Legs", image: imgIPLHalfLegs },
-      { title: "Advanced Age", image: imgAdvancedAge },
-      { title: "Jessner" },
-      { title: "Acne Defense", image: imgAcneDefense },
-      { title: "Teen Facial" },
+      { title: "Deep Collagen Stimulation", image: imgLaserRostoDois, link: VAGARO_LINKS.collagen },
+      { title: "Lymphatic Drainage Detox with Hot Blanket", image: imgMassagemPerna, link: VAGARO_LINKS.detoxHotBlanket },
+      { title: "Peel Vit C", image: imgPeelingVitaminC, link: VAGARO_LINKS.vitaminC },
+      { title: "Hydragloss", image: imgHydragloss, link: VAGARO_LINKS.lipsHydragloss },
+      { title: "IPL Hair Removal - Half Legs", image: imgIPLHalfLegs, link: VAGARO_LINKS.iplHalfLegs },
+      { title: "Advanced Age", image: imgAdvancedAge, link: VAGARO_LINKS.advancedAge },
+      { title: "Jessner", link: VAGARO_LINKS.jessner },
+      { title: "Acne Defense", image: imgAcneDefense, link: VAGARO_LINKS.acneDefense },
+      { title: "Teen Facial", image: imgTeenFacial, link: VAGARO_LINKS.teenClearSkin },
     ],
   },
 ];
