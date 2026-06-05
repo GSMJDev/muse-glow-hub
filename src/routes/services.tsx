@@ -32,7 +32,7 @@ import imgBackBikiniBraz from "@/assets/BackWaxBikiniWaxFullBrazilianWax.jpeg";
 import imgAdvancedAge from "@/assets/AdvancedAge.jpeg";
 import imgAcneDefense from "@/assets/AcneDefense.jpeg";
 import imgPeelingVitaminC from "@/assets/PeelingVitaminC.jpeg";
-import imgTeenFacial from "@/assets/TeenFacial.jpeg";
+import imgTeenFacial from "@/assets/teenfacial.jpeg";
 
 const VAGARO_LINK = "https://www.vagaro.com/mizzmissiaesthetics/book-now";
 
