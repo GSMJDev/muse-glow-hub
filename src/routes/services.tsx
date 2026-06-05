@@ -32,7 +32,7 @@ import imgBackBikiniBraz from "@/assets/BackWaxBikiniWaxFullBrazilianWax.jpeg";
 import imgAdvancedAge from "@/assets/AdvancedAge.jpeg";
 import imgAcneDefense from "@/assets/AcneDefense.jpeg";
 import imgPeelingVitaminC from "@/assets/PeelingVitaminC.jpeg";
-import imgTeenFacial from "@/assets/teenfacial.jpeg";
+import imgteenfacial from "@/assets/teenfacial.jpeg";
 
 const VAGARO_LINK = "https://www.vagaro.com/mizzmissiaesthetics/book-now";
 
@@ -178,7 +178,7 @@ const categories: Category[] = [
       { title: "Advanced Age", image: imgAdvancedAge, link: VAGARO_LINKS.advancedAge },
       { title: "Jessner", link: VAGARO_LINKS.jessner },
       { title: "Acne Defense", image: imgAcneDefense, link: VAGARO_LINKS.acneDefense },
-      { title: "Teen Facial", image: imgTeenFacial, link: VAGARO_LINKS.teenClearSkin },
+      { title: "Teen Facial", image: imgteenfacial, link: VAGARO_LINKS.teenClearSkin },
     ],
   },
 ];
