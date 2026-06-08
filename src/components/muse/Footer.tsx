@@ -22,7 +22,7 @@ export function Footer() {
           <div className="mt-6 flex gap-3">
             <a
               aria-label="Instagram"
-              href="https://www.instagram.com/musebymissi"
+              href="https://www.instagram.com/mizz.missi/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 inline-flex items-center justify-center border border-gold/30 rounded-sm text-gold hover:bg-gold/10 transition-colors"
@@ -71,7 +71,7 @@ export function Footer() {
         <div>
           <h5 className="font-display text-[10px] tracking-[0.3em] text-gold mb-4">NEWSLETTER</h5>
           <p className="text-sm text-foreground/70 mb-4">
-            Rituals, openings &amp; private invitations — straight to your inbox.
+            "Beauty insights, priority bookings & private invitations — straight to your inbox.
           </p>
           {subscribed ? (
             <p className="text-sm text-gold">

@@ -8,7 +8,7 @@ const INITIAL: Msg = {
     "Welcome to MUSE Aesthetics & Spa by Missi. How may I assist you with your wellness and skincare goals today — services, booking, or directions?",
 };
 
-// --- BASE DE CONHECIMENTO LOCAL (SYSTEM PROMPT EMBUTIDO) ---
+// --- BASE DE CONHECIMENTO LOCAL (COM LINKS CLICÁVEIS EM HTML) ---
 const KNOWLEDGE_BASE = [
   {
     keys: ["hello", "hi", "hey", "good morning", "good afternoon", "anyone there"],
@@ -20,39 +20,39 @@ const KNOWLEDGE_BASE = [
   },
   {
     keys: ["book", "appointment", "reserve", "reservation", "schedule", "calendar", "vagaro"],
-    reply: "To book your personalized experience, you can use our convenient online reservation area right here on our website (via our Vagaro widget below), or visit us directly at vagaro.com/mizzmissiaesthetics. We highly recommend scheduling an initial consultation so our specialists can evaluate your unique skincare needs."
+    reply: "To book your personalized experience, you can use our convenient online reservation area right here on our website, or visit us directly at <a href='https://www.vagaro.com/mizzmissiaesthetics' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>vagaro.com/mizzmissiaesthetics</a>.<br><br>Want to see more of our work? Feel free to check out our <a href='https://www.instagram.com/mizz.missi/' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>Instagram @mizz.missi</a>!"
   },
   {
     keys: ["facial", "facials", "skin", "cleaning", "deep cleaning", "pore", "dermaplaning", "led"],
-    reply: "We specialize in premium clinical facials designed for visible results:\n\n• Deep Cleaning Facial Mizz Missi ($95 - 60 min): Deep cleanse, steam, gentle extractions, and hydration.\n• Deep Cleaning with LED Lamp ($120 - 60 min): Reduces inflammation and stimulates collagen.\n• Deep Cleaning with Dermaplaning ($140 - 60 min): Removes dead cells and fine vellus hair for incredibly smooth skin.\n\nWe would be delighted to welcome you for a personalized assessment to choose the perfect option!"
+    reply: "We specialize in premium clinical facials designed for visible results:<br><br>• Deep Cleaning Facial Mizz Missi ($95 - 60 min)<br>• Deep Cleaning with LED Lamp ($120 - 60 min)<br>• Deep Cleaning with Dermaplaning ($140 - 60 min)<br><br>We would be delighted to welcome you for a personalized assessment. <a href='https://www.vagaro.com/mizzmissiaesthetics' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>Click here to book</a>."
   },
   {
     keys: ["peeling", "peels", "algae", "chemical", "acne", "dark spot", "spots", "stain", "scars"],
-    reply: "For skin renewal and tone correction, we offer high-performance treatments:\n\n• Algae Peeling / Organic Peeling ($120 - 50 min): Ideal for acne control, cellular renewal, and reducing blemishes.\n• Microneedling Facial ($180 - 80 min | Package of 3 for $499): Excellent for collagen production, acne scars, and fine lines.\n• Chemical Peels: Tailored options specifically formulated for Acne or Dark Spots.\n\nWe recommend a professional evaluation prior to treatment to ensure optimum safety and results."
+    reply: "For skin renewal and tone correction, we offer high-performance treatments:<br><br>• Algae Peeling / Organic Peeling ($120 - 50 min)<br>• Microneedling Facial ($180 - 80 min)<br>• Chemical Peels: Tailored for Acne or Dark Spots.<br><br>We recommend a professional evaluation prior to treatment to ensure optimum safety and results."
   },
   {
     keys: ["wax", "waxing", "hair removal", "brazilian", "bikini", "leg", "lip"],
-    reply: "Our professional waxing services utilize a specialized wax formulated for sensitive skin, ensuring low irritation and maximum comfort:\n\n• Upper Lip ($15) | Armpit ($20)\n• Bikini ($35) | Full Brazilian ($65)\n• Lower Leg ($30) | Full Leg ($55) | Back ($55)\n\nWould you like to add a waxing session to your next spa visit?"
+    reply: "Our professional waxing services utilize a specialized wax formulated for sensitive skin, ensuring low irritation and maximum comfort:<br><br>• Upper Lip ($15) | Armpit ($25)<br>• Bikini ($45) | Full Brazilian ($55)<br>• Lower Leg ($40) | Full Leg ($60) | Back ($60)<br><br>Would you like to <a href='https://www.vagaro.com/mizzmissiaesthetics' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>book a waxing session</a>?"
   },
   {
     keys: ["body", "massage", "contour", "relax", "detox", "cellulite", "blanket"],
-    reply: "Rejuvenate your body with our sophisticated body therapies:\n\n• Body Relaxing Treatment ($75 - 80 min): Muscle relaxation, stress relief, and improved circulation.\n• Body Contour Brazilian ($130 - 80 min): Formulated for body contouring, skin firmness, and cellulite reduction.\n• Body Contour Detox with Thermal Blanket ($130 - 80 min): Ultimate detoxifying and muscle-relieving ritual.\n\nWe invite you to book a session to experience true relaxation."
+    reply: "Rejuvenate your body with our sophisticated body therapies:<br><br>• Body Relaxing Treatment ($120 - 60 min)<br>• Body Contour Brazilian ($130 - 60 min)<br>• Body Contour Detox with Thermal Blanket ($130 - 75 min)<br><br>We invite you to <a href='https://www.vagaro.com/mizzmissiaesthetics' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>book a session</a> to experience true relaxation."
   },
   {
     keys: ["price", "cost", "how much", "rates", "menu"],
-    reply: "Our premium services range from quick aesthetic enhancements to complete renewal rituals. Facials start at $95, body treatments at $75, and specialized advanced protocols like Microneedling are available from $180. You can explore our full menu of services right here, or let me know what area you would like to target!"
+    reply: "Our premium services range from quick aesthetic enhancements to complete renewal rituals. Facials start at $95, body treatments at $120, and specialized advanced protocols like Microneedling are available from $220. You can explore our full menu of services right here, or <a href='https://www.vagaro.com/mizzmissiaesthetics' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>view our full pricing on Vagaro</a>."
   },
   {
     keys: ["pay", "finance", "financing", "cherry", "installment", "card", "split"],
     reply: "Yes! To make your wellness journey even more seamless, MUSE Aesthetics & Spa offers flexible payment and financing options through Cherry. Feel free to inquire about setting up your payment plan during your next visit."
   },
   {
-    keys: ["phone", "call", "contact", "number", "email", "talk"],
-    reply: "You can reach our team directly by calling +1 (774) 559-1684. Alternatively, you can use the Contact Form on this page to send us a direct message. We are always here to assist you."
+    keys: ["phone", "call", "contact", "number", "email", "talk", "instagram", "insta"],
+    reply: "You can reach our team directly by calling <a href='tel:+17745591684' class='text-gold underline hover:opacity-80 transition-opacity'>+1 (774) 559-1684</a>.<br><br>Alternatively, you can send us a Direct Message on our <a href='https://www.instagram.com/mizz.missi/' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>Instagram @mizz.missi</a> or use the Contact Form on this website. We are always here to assist you."
   },
   {
     keys: ["history", "old name", "mizz missi", "brand", "missi"],
-    reply: "Founded in June 2022 as Mizz Missi Aesthetics, our brand evolved in 2026 into MUSE Aesthetics & Spa by Missi. The name 'MUSE' represents inspiration, authentic beauty, femininity, and confidence—reflecting our growth and our commitment to delivering elevated, quiet luxury experiences."
+    reply: "Founded in June 2022 as Mizz Missi Aesthetics, our brand evolved into MUSE Aesthetics & Spa by Missi. The name 'MUSE' represents inspiration, authentic beauty, femininity, and confidence—reflecting our growth and our commitment to delivering elevated, quiet luxury experiences."
   },
   {
     keys: ["review", "reviews", "good", "best", "feedback", "rating"],
@@ -62,7 +62,7 @@ const KNOWLEDGE_BASE = [
 
 // Resposta elegante caso o robozinho caia no "else"
 const FALLBACK_REPLY = 
-  "Thank you for your inquiry. To give you the most accurate advice regarding your skincare goals, I highly recommend speaking with our professionals directly. Please feel free to schedule a consultation via our booking widget, call us at +1 (774) 559-1684, or submit your question through our Contact form so we can provide more personalized details.";
+  "Thank you for your inquiry. To give you the most accurate advice regarding your skincare goals, I highly recommend speaking with our professionals directly.<br><br>Please feel free to <a href='https://www.vagaro.com/mizzmissiaesthetics' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>book a consultation</a>, call us at <a href='tel:+17745591684' class='text-gold underline hover:opacity-80 transition-opacity'>+1 (774) 559-1684</a>, or DM us on <a href='https://www.instagram.com/mizz.missi/' target='_blank' rel='noopener noreferrer' class='text-gold underline hover:opacity-80 transition-opacity'>Instagram @mizz.missi</a> so we can provide more personalized details.";
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -86,7 +86,7 @@ export function ChatWidget() {
     setInput("");
     setLoading(true);
 
-    // 2. Simula o tempo de resposta ("Thinking...") para parecer um bot real
+    // 2. Simula o tempo de resposta ("Thinking...")
     setTimeout(() => {
       const lowerText = text.toLowerCase();
       let matchedReply = "";
@@ -100,12 +100,12 @@ export function ChatWidget() {
         }
       }
 
-      // Se não achou palavra-chave, usa o fallback elegante
+      // Se não achou palavra-chave, usa o fallback com links
       const finalReply = matchedReply || FALLBACK_REPLY;
 
       setMessages((m) => [...m, { role: "assistant", content: finalReply }]);
       setLoading(false);
-    }, 800); // 800ms de delay para simular naturalidade
+    }, 800);
   };
 
   return (
@@ -141,10 +141,15 @@ export function ChatWidget() {
                 className={
                   m.role === "user"
                     ? "ml-auto max-w-[85%] px-4 py-2 rounded-sm gold-gradient text-background text-sm"
-                    : "mr-auto max-w-[90%] text-sm text-foreground/85 leading-relaxed whitespace-pre-wrap"
+                    : "mr-auto max-w-[90%] text-sm text-foreground/85 leading-relaxed"
                 }
               >
-                {m.content}
+                {/* O usuário não renderiza HTML, apenas o assistente */}
+                {m.role === "user" ? (
+                  m.content
+                ) : (
+                  <span dangerouslySetInnerHTML={{ __html: m.content }} />
+                )}
               </div>
             ))}
             {loading && (

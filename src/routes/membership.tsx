@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
 
-const VAGARO = "https://www.vagaro.com/mizzmissiaesthetics";
+const VAGARO = "https://www.vagaro.com/mizzmissiaesthetics/memberships";
 
 const perks = [
   "Reserved pricing on every signature treatment",
