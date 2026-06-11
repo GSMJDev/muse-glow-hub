@@ -63,7 +63,6 @@ function ServicesPage() {
         { title: "Microneedling Facial (3 Sessions)", duration: "Package", price: "$500.00", desc: "A series of 3 sessions for optimal collagen induction results.", link: "https://www.vagaro.com/cl/fLIDgC5Tg1ab8w8CQyTJzFZvx9wg~XNsFNcxcHa8HZI=", image: imgMicroNeedlingThree },
         { title: "Seeweed Detox Peel", duration: "45 min", price: "$160.00", desc: "Detoxifying and revitalizing peel packed with marine minerals.", link: "https://www.vagaro.com/cl/v-OjtehJAYcp2wOpKGDj3ErsODoWcMBqSxnmy5-e57I=", image: imgMascaraFacial },
         { title: "Vitamin C Radiance Peel", duration: "45 min", price: "$140.00", desc: "Indicated to reduce wrinkles and expression lines caused by photoaging. Promotes deep hydration, stimulates firmness and elasticity.", link: "https://www.vagaro.com/cl/~Qli9EMPlNINgfK6QFz7oft1I0PeNfcfIceq4Hyc7m0=", image: imgPeelingVitaminC },
-        { title: "Deep Cleansing Facial from Groupon", duration: "60 min", price: "Voucher", desc: "Exclusive deep cleansing facial for our Groupon customers.", link: "https://www.vagaro.com/cl/GzRVhEne577ccTjxpXBW2YPfzv9OU2mw6fMjXYCIpv0=", image: imgFaceLimpezaPontosPretos },
         { title: "Hydragloss Lips Hydration", duration: "30 min", price: "$80.00", desc: "An exclusive treatment designed to restore hydration, improve texture, and enhance the natural beauty of the lips using hyaluronic acid.", link: "https://www.vagaro.com/cl/0wj6jPPcAIFXhGhxK632xzlAQaeJ8G9Rs~EMRKhUfr4=", image: imgHydraglossLipsHydration }
       ]
     },
@@ -95,16 +94,6 @@ function ServicesPage() {
     {
       id: "eyebrows", label: "Eyebrows", items: [
         { title: "Eyebrow Tweezers Shaping", duration: "20 min", price: "$45.00", desc: "Precision eyebrow shaping using tweezers.", link: "https://www.vagaro.com/cl/IEhyqG8PDJtOIviJOIVgF915eEWCqKvviN4Bj1mk8ZQ=", image: imgeyebrown }
-      ]
-    },
-    {
-      id: "lashes", label: "Lashes", items: [
-        { title: "EyeLashes Extension Classic", duration: "120 min", price: "$150.00", desc: "A beautiful, natural enhancement with classic extensions.", link: "https://www.vagaro.com/cl/xcPfkdzyxRXr0lqYWJyGlYs0o9i-fBs-L0A45McNto4=", image: imgeyebrown },
-        { title: "EyeLashes Extension Fills - Classic - 3 week", duration: "60 min", price: "$75.00", desc: "Maintenance fill for your classic set.", link: "https://www.vagaro.com/cl/cCm1tx~5GDgjxaAGVjnbCgrYm12Z~54nv4yUDzY6gbg=", image: imgeyebrown },
-        { title: "EyeLashes Extension Brazilian", duration: "150 min", price: "$180.00", desc: "Voluminous and glamorous Brazilian style extensions.", link: "https://www.vagaro.com/cl/Y4NtX43cVNd2OR0Zy9P8DnZh9vic2xSpPhHyPapgZlQ=", image: imgeyebrown },
-        { title: "EyeLashes Extension - Fills - Brazilian", duration: "75 min", price: "$90.00", desc: "Maintenance fill for your Brazilian set.", link: "https://www.vagaro.com/cl/O3US4MV-wHdtvy78roVfvQlutzvVZ-B85fHm6rCqFKs=", image: imgeyebrown },
-        { title: "EyeLashes Extension Hybrid", duration: "135 min", price: "$165.00", desc: "The perfect mix of classic and volume lashes.", link: "https://www.vagaro.com/cl/-Bp3FcA-10AkQxO1uEAiiDr24UKs6IA1eOCV8JRVW6g=", image: imgeyebrown },
-        { title: "EyeLashes Extension - Fills - Hybrid", duration: "75 min", price: "$85.00", desc: "Maintenance fill for your hybrid set.", link: "https://www.vagaro.com/cl/sdIJIzEWwq4HwOI5DUJv4Cjto1zCLCET6j~LXmGMm5E=", image: imgeyebrown }
       ]
     },
     {
