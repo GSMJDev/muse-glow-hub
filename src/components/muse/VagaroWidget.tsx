@@ -4,15 +4,31 @@ export function VagaroWidget() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Evita que o React injete o script duas vezes no modo de desenvolvimento
-    if (containerRef.current && containerRef.current.children.length === 0) {
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.async = true;
-      script.src = "https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqpCJGtCZGcT3qmV35y6JuPlXez3Ly6puSdBuOc1WJD1wOc1WO61Ctdg4tjxMG9pUxapkUcvCu7gCmjZcoapOUcPCvdfQOW?v=dvkaB1OlzzcrE7hBPH92vdqwtlKbEXQ5SQnPqgkpHco#";
-      
+    // 1. Toda vez que o componente monta, limpamos o container para garantir que está zerado
+    if (containerRef.current) {
+      containerRef.current.innerHTML = "";
+    }
+
+    // 2. Criamos o script dinamicamente
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.async = true;
+    
+    // Pegamos a URL exata do seu script do Vagaro
+    script.src = "https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqpCJGtCZGcT3qmV35y6JuPlXez3Ly6puSdBuOc1WJD1wOc1WO61Ctdg4tjxMG9pUxapkUcvCu7gCmjZcoapOUcPCvdfQOW?v=dvkaB1OlzzcrE7hBPH92vdqwtlKbEXQ5SQnPqgkpHco#";
+
+    // 3. Injeta o script no container
+    if (containerRef.current) {
       containerRef.current.appendChild(script);
     }
+
+    // 4. FUNÇÃO DE LIMPEZA (CLEANUP): Quando o usuário sai da página, removemos o script do DOM
+    // Isso evita que o estado interno do widget do Vagaro fique travado na memória do navegador
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.innerHTML = "";
+      }
+    };
   }, []);
 
   return (
@@ -29,11 +45,11 @@ export function VagaroWidget() {
       >
         <style>{`.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}`}</style>
         
-        {/* AQUI É ONDE O CALENDÁRIO VAI RENDERIZAR SEM O RODAPÉ PRETO */}
-        <div ref={containerRef} className="w-full"></div>
+        {/* Onde o calendário vai renderizar de forma limpa */}
+        <div ref={containerRef} className="w-full min-h-[600px]"></div>
         
-        {/* LINKS EXATOS DO SEU CÓDIGO */}
-        <div className="mt-4 text-[11px]">
+        {/* Links de atribuição do Vagaro */}
+        <div className="mt-4 text-[11px] opacity-60">
           <a href="https://www.vagaro.com/pro/">Powered by Vagaro</a>&nbsp;
           <a href="https://www.vagaro.com/pro/salon-software">Salon Software</a>,&nbsp;
           <a href="https://www.vagaro.com/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;
