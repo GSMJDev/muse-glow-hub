@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useForm, ValidationError } from "@formspree/react";
 import { SectionLabel } from "@/components/muse/Footer";
 import { VagaroWidget } from '@/components/muse/VagaroWidget';
+import { useState } from "react"; // IMPORT PARA A POLÍTICA FUNCIONAR
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -16,6 +17,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  // ESTADO PARA A GAVETA DA POLÍTICA
+  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
+
   return (
     <section className="pt-40 pb-28 px-6">
       <div className="mx-auto max-w-4xl text-center">
@@ -50,7 +54,42 @@ function ContactPage() {
         {/* --- ÁREA DE AGENDAMENTO COM O WIDGET --- */}
         <div className="mt-20">
           <SectionLabel>RESERVATIONS</SectionLabel>
-          <div className="mt-10 bg-white rounded-sm border border-gold/20 py-8">
+
+          {/* =========================================
+              CANCELLATION POLICY (ACCORDION)
+              ========================================= */}
+          <div className="mt-8 max-w-2xl mx-auto border-t border-b border-gold/20 py-6">
+            <button
+              onClick={() => setIsPolicyOpen(!isPolicyOpen)}
+              className="flex items-center justify-center w-full gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-foreground/70 hover:text-gold transition-colors"
+            >
+              <span>Cancellation Policy</span>
+              <svg
+                className={`w-4 h-4 transition-transform duration-300 ${isPolicyOpen ? 'rotate-180 text-gold' : ''}`}
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                isPolicyOpen ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <div className="p-6 md:p-8 bg-[#FCFAF8] border border-gold/20 rounded-sm text-sm text-foreground/75 leading-relaxed text-left md:text-center shadow-inner">
+                <p>
+                  We ask that you please reschedule or cancel at least <strong className="text-[#631F37] font-semibold">24 hours</strong> before the beginning of your appointment or you may be charged a cancellation fee. We have a firm 24-hour cancellation policy.
+                </p>
+                <p className="mt-4">
+                  Cancelling within 24 hours results in a fee of <strong className="text-[#631F37] font-semibold">30% of the service total</strong>. Same day cancellations or no-shows result in a <strong className="text-[#631F37] font-semibold">full service price</strong> charge.
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* FIM DA CANCELLATION POLICY */}
+
+          <div className="mt-10 bg-white rounded-sm border border-gold/20 py-8 flex justify-center">
             <VagaroWidget />
           </div>
           <p className="mt-6 text-xs text-foreground/60">

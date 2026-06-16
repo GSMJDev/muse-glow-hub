@@ -2,9 +2,9 @@ import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
 
-// AQUI: Alterado de .png para .jpeg. Se não for, teste .jpg!
-import fernandaImg from "@/assets/fernanda.png";
-import micheleImg from "@/assets/michele.png";
+// AQUI: Importações corrigidas para .jpeg
+import fernandaImg from "@/assets/fernanda.jpeg";
+import micheleImg from "@/assets/michele.jpeg";
 import krystalImg from "@/assets/krystal.jpeg";
 
 export const Route = createFileRoute("/team")({
