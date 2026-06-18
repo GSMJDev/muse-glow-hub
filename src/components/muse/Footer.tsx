@@ -20,9 +20,10 @@ export function Footer() {
           <p className="font-display text-[9px] tracking-[0.4em] text-gold/60 mt-2">AESTHETICS &amp; SPA</p>
           <p className="mt-6 text-[10px] uppercase tracking-[0.3em] text-gold/70">By appointment only</p>
           <div className="mt-6 flex gap-3">
+            {/* 👇 LINK DO INSTAGRAM ATUALIZADO AQUI 👇 */}
             <a
               aria-label="Instagram"
-              href="https://www.instagram.com/mizz.missi/"
+              href="https://www.instagram.com/musebymissi/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 inline-flex items-center justify-center border border-gold/30 rounded-sm text-gold hover:bg-gold/10 transition-colors"
@@ -70,8 +71,9 @@ export function Footer() {
         </div>
         <div>
           <h5 className="font-display text-[10px] tracking-[0.3em] text-gold mb-4">NEWSLETTER</h5>
+          {/* Corrigida a aspa dupla que sobrou aqui no início da string */}
           <p className="text-sm text-foreground/70 mb-4">
-            "Beauty insights, priority bookings & private invitations — straight to your inbox.
+            Beauty insights, priority bookings & private invitations — straight to your inbox.
           </p>
           {subscribed ? (
             <p className="text-sm text-gold">

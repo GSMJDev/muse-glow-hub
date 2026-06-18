@@ -4,7 +4,7 @@ import { SectionLabel } from "@/components/muse/Footer";
 import heroImg from "@/assets/hero-facial.jpeg";
 import { VagaroWidget } from '@/components/muse/VagaroWidget';
 import { GoogleReviews } from '@/components/muse/GoogleReviews';
-import { useState } from "react"; // IMPORTAMOS O HOOK PARA A GAVETA FUNCIONAR
+import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,12 +21,15 @@ export const Route = createFileRoute("/")({
         content: "Results-driven skincare and body treatments in a warm, inviting environment.",
       },
     ],
+    links: [
+      { rel: "icon", type: "image/png", href: "/favicon192x192.png" },
+      { rel: "apple-touch-icon", href: "/favicon192x192.png" },
+    ],
   }),
   component: Index,
 });
 
 function Index() {
-  // ESTADO PARA CONTROLAR SE A POLÍTICA ESTÁ ABERTA OU FECHADA
   const [isPolicyOpen, setIsPolicyOpen] = useState(false);
 
   return (
@@ -116,6 +119,34 @@ function Index() {
         </div>
       </section>
 
+      {/* OPERATING HOURS SECTION */}
+      <section className="pb-16 bg-background px-6 border-t border-gold/5">
+        <div className="mx-auto max-w-2xl text-center bg-card/20 border border-gold/15 p-8 md:p-12 rounded-sm">
+          <span className="font-display text-[9px] tracking-[0.3em] text-gold/80 block mb-4">HOURS OF OPERATION</span>
+          <div className="space-y-3 font-serif text-sm text-foreground/80 max-w-xs mx-auto">
+            <div className="flex justify-between border-b border-gold/10 pb-2">
+              <span>Thursday</span>
+              <span className="text-gold font-sans font-medium">9 AM – 5 PM</span>
+            </div>
+            <div className="flex justify-between border-b border-gold/10 pb-2">
+              <span>Friday</span>
+              <span className="text-gold font-sans font-medium">9 AM – 6 PM</span>
+            </div>
+            <div className="flex justify-between border-b border-gold/10 pb-2">
+              <span>Saturday</span>
+              <span className="text-gold font-sans font-medium">9 AM – 5 PM</span>
+            </div>
+            <div className="flex justify-between text-foreground/40 pt-1 italic text-xs">
+              <span>Sunday to Wednesday</span>
+              <span>Closed</span>
+            </div>
+          </div>
+          <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-foreground/50">
+            * Treatment sessions are strictly by appointment only
+          </p>
+        </div>
+      </section>
+
       {/* OFFERS */}
       <section className="py-16 bg-[#FCFAF8] px-6">
         <div className="mx-auto max-w-5xl text-center">
@@ -182,9 +213,7 @@ function Index() {
             .
           </p>
 
-          {/* =========================================
-              CANCELLATION POLICY (ACCORDION ELEGANTE) 
-              ========================================= */}
+          {/* CANCELLATION POLICY */}
           <div className="mt-12 max-w-2xl mx-auto border-t border-gold/20 pt-8">
             <button
               onClick={() => setIsPolicyOpen(!isPolicyOpen)}
@@ -214,8 +243,6 @@ function Index() {
               </div>
             </div>
           </div>
-          {/* FIM DA CANCELLATION POLICY */}
-
         </div>
       </section>
     </>
