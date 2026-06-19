@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/muse/Footer";
 
 // LINK ATUALIZADO
@@ -29,12 +30,12 @@ const memberships = [
     id: "signature",
     title: "Muse Signature",
     price: "$99",
-    desc: "Our signature monthly wellness ritual.",
+    desc: "Our signature monthly wellness experience.", // Reformulado: ritual -> experience
     treatmentsTitle: "Includes ONE monthly treatment:",
     treatments: [
       "Deep Cleansing Facial",
       "Mizz LED Lamp Therapy",
-      "Diamond Glow Microdermabrasion w/ Deep Cleansing",
+      "Led Lamp Therapy w/ Deep Facial Cleansing",
       "Body Relaxing Treatment",
       "Back Facial with Extractions",
     ],
@@ -50,22 +51,25 @@ const memberships = [
     id: "prestige",
     title: "Muse Prestige",
     price: "$199",
-    desc: "The ultimate premium experience.",
-    treatmentsTitle: "Includes ONE monthly premium treatment:",
+    desc: "Our ultimate luxury wellness experience.", // Atualizado conforme novos dados
+    treatmentsTitle: "Includes ONE advanced monthly treatment:", // Atualizado conforme novos dados
     treatments: [
-      "Premium Facials & Skin Rejuvenation",
-      "Waxing & IPL Hair Removal",
-      "Advanced Body Treatments",
-      "LED Therapy",
+      "Personalized Facial or Body Analysis Consultation",
+      "Customized Treatment Plan",
+      "Advanced Facial Rejuvenation Treatments",
+      "Advanced Body Contouring Treatments",
+      "LED Light Therapy",
+      "1 Complimentary Waxing Service",
+      "1 Complimentary IPL Hair Removal Session (Small Area)",
     ],
     benefits: [
-      "15% OFF additional services",
-      "10% OFF retail products",
-      "Rollover of unused treatments (up to 60 days)",
-      "2 FREE LED Therapy upgrades per year",
-      "Birthday gift & priority access to special offers and events",
+      "15% OFF Additional Services",
+      "10% OFF Retail Products",
+      "Unused Treatments Roll Over (Up to 60 Days)",
+      "Continuous Progress Tracking",
+      "Birthday Gift & Priority Access to Exclusive Events and Promotions",
     ],
-    note: "Call us to know more information about all the exclusive benefits in our Prestige membership!",
+    note: "A personalized beauty and wellness program designed to deliver visible, long-lasting results while helping you feel confident, radiant, and cared for every month.", // Atualizado conforme novos dados
   },
 ];
 
@@ -73,7 +77,7 @@ export const Route = createFileRoute("/membership")({
   head: () => ({
     meta: [
       { title: "Membership — MUSE By Missi Aesthetics" },
-      { name: "description", content: "A monthly ritual with reserved pricing and exclusive access at Muse By Missi Aesthetics." },
+      { name: "description", content: "A monthly program with reserved pricing and exclusive access at Muse By Missi Aesthetics." }, // Reformulado: ritual -> program
       { property: "og:title", content: "Membership — MUSE By Missi" },
       { property: "og:description", content: "Skin as a discipline. Glow as a routine." },
     ],
@@ -90,8 +94,8 @@ function MembershipPage() {
           Membership
         </h1>
         <p className="mt-6 text-foreground/70 max-w-xl mx-auto leading-relaxed">
-          A monthly ritual with reserved pricing and exclusive access — for clients who treat
-          skincare as a discipline, not an occasion.
+          A monthly program with reserved pricing and exclusive access — for clients who treat
+          skincare as a discipline, not an occasion. {/* Reformulado: ritual -> program */}
         </p>
 
         {/* CARDS DOS PLANOS */}

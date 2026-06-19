@@ -26,15 +26,15 @@ function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
           
           {/* LADO ESQUERDO: GALERIA DE FOTOS */}
-          <div className="flex flex-col gap-8 md:gap-12">
+          <div className="flex flex-col gap-8 md:gap-12 max-w-md mx-auto lg:mx-0 w-full">
             
-            {/* Foto Principal (Fernanda) */}
+            {/* Foto Principal (Fernanda) - Encolhida e focada no topo */}
             <div className="relative p-2 border border-gold/20 bg-white shadow-xl rotate-[-1deg] hover:rotate-0 transition-transform duration-500 w-full">
               <img
                 src={aboutBg}
                 alt="Missi"
                 loading="lazy"
-                className="w-full aspect-[4/3] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700" 
+                className="w-full aspect-[3/4] object-cover object-top grayscale-[10%] hover:grayscale-0 transition-all duration-700" 
               />
               <div className="absolute inset-3 border border-gold/10 pointer-events-none" />
             </div>
