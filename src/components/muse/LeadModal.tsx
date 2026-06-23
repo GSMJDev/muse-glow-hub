@@ -48,25 +48,29 @@ export function LeadModal() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center px-4 animate-in fade-in duration-500"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-in fade-in duration-500"
       role="dialog"
       aria-modal="true"
     >
+      {/* Overlay escuro de fundo */}
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={close} />
       
-      <div className="relative w-full max-w-3xl rounded-sm border border-burgundy/30 shadow-2xl bg-background overflow-hidden flex flex-col md:grid md:grid-cols-2 max-h-[90vh]">
+      {/* Container Principal do Modal */}
+      <div className="relative w-full max-w-3xl rounded-sm border border-gold/20 shadow-2xl bg-background overflow-hidden flex flex-col md:grid md:grid-cols-2 max-h-[95vh]">
         
+        {/* Botão de Fechar "X" Otimizado para Mobile */}
         <button
           aria-label="Close"
           onClick={close}
-          className="absolute top-2 right-2 z-20 text-gold/70 hover:text-gold transition-colors p-2"
+          className="absolute top-3 right-3 z-[60] flex items-center justify-center w-10 h-10 rounded-full bg-black/40 backdrop-blur-md text-white hover:bg-black/60 transition-colors shadow-sm"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <path d="M6 6l12 12M6 18L18 6" />
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
-        <div className="relative w-full h-48 md:h-auto bg-gray-100">
+        {/* Imagem */}
+        <div className="relative w-full h-48 md:h-full bg-muted shrink-0">
           <img 
             src={museLogo} 
             alt="MUSE Logo" 
@@ -74,6 +78,7 @@ export function LeadModal() {
           />
         </div>
 
+        {/* Área de Conteúdo (com scroll se ficar muito grande no mobile) */}
         <div className="p-8 md:p-12 flex flex-col justify-center text-center overflow-y-auto">
           {modalType === "services" ? (
             <>
@@ -85,8 +90,8 @@ export function LeadModal() {
               <ul className="mt-6 space-y-3 text-left">
                 {featured.map((f) => (
                   <li key={f.name} className="flex justify-between border-b border-gold/15 pb-2 text-sm text-foreground/80">
-                    <span className="font-medium">{f.name}</span>
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-gold/70">{f.duration}</span>
+                    <span className="font-medium pr-2">{f.name}</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-gold/70 whitespace-nowrap">{f.duration}</span>
                   </li>
                 ))}
               </ul>

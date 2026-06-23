@@ -34,8 +34,8 @@ const memberships = [
     treatmentsTitle: "Includes ONE monthly treatment:",
     treatments: [
       "Deep Cleansing Facial",
-      "Mizz LED Lamp Therapy",
       "Led Lamp Therapy w/ Deep Facial Cleansing",
+      "Diamond Glow Microdermabrasion w/ Deep Cleansing",
       "Body Relaxing Treatment",
       "Back Facial with Extractions",
     ],
