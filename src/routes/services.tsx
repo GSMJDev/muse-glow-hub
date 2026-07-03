@@ -15,6 +15,7 @@ import imgLedLamp from "@/assets/ledlamp.jpeg";
 import imgBodyTreatmentPeelingOrganicAlgae from "@/assets/body-treatment-peeling-organic-algae.jpg.asset.json";
 import imgMascaraFacial from "@/assets/mascarafacial.jpeg";
 import imgBackFacialExtractions from "@/assets/back-facial-extractions.jpg.asset.json";
+import imgSkinAssessment from "@/assets/skin-assessment.jpg.asset.json";
 import imgMascaraFacialTerrosa from "@/assets/mascarafacialterrosa.jpg";
 import imgMassagemCostas from "@/assets/massagemcostas.jpeg";
 import imgMassagemPerna from "@/assets/massagemperna.jpeg";
@@ -55,7 +56,7 @@ function ServicesPage() {
   const categories = [
     {
       id: "facial", label: "Facial", items: [
-        { title: "Skin Assessment", duration: "30 min", price: "$30.00", desc: "Discover the Perfect Treatment for Your Skin!", link: "https://www.vagaro.com/cl/iPUUoMiNTENNwaEuCGUrQ4~2n~4YQlytJUxy-2-IzOY=", image: imgDeepCleaningFacialMuseByMissi },
+        { title: "Skin Assessment", duration: "30 min", price: "$30.00", desc: "Discover the Perfect Treatment for Your Skin!", link: "https://www.vagaro.com/cl/iPUUoMiNTENNwaEuCGUrQ4~2n~4YQlytJUxy-2-IzOY=", image: imgSkinAssessment.url },
         { title: "Deep Cleansing Facial Mizz Missi", duration: "60 min", price: "$95.00", desc: "Experience a deep cleansing treatment that purifies.", link: "https://www.vagaro.com/cl/e3XTbPwag6j6mnd8dPjQLJq06YepsqJLq203QvXln8w=", image: imgDeepCleaningFacialMuseByMissi },
         { title: "Teen Clear Skin Facial", duration: "45 min", price: "$85.00", desc: "Deep facial cleansing for teenagers.", link: "https://www.vagaro.com/cl/rpgo8HhL65SU0FN2r~Z2f0GUxYdl5hUzkN-Mtg9xfy4=", image: imgTeenFacialNova },
         { title: "Dermaplaning Glow w/ Deep Facial Cleansing", duration: "75 min", price: "$140.00", desc: "Exfoliating outer layer of dead skin cells.", link: "https://www.vagaro.com/cl/E55Ji14rXvQK-hw2h8afLIlGOzi3igi0B24b-erf8Aw=", image: imgDermaplaningGlow.url },
