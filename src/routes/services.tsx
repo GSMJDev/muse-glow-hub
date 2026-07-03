@@ -14,6 +14,7 @@ import imgHydraglossLipsHydration from "@/assets/HydraglossLipsHydration.jpeg";
 import imgLedLamp from "@/assets/ledlamp.jpeg";
 import imgBodyTreatmentPeelingOrganicAlgae from "@/assets/body-treatment-peeling-organic-algae.jpg.asset.json";
 import imgMascaraFacial from "@/assets/mascarafacial.jpeg";
+import imgBackFacialExtractions from "@/assets/back-facial-extractions.jpg.asset.json";
 import imgMascaraFacialTerrosa from "@/assets/mascarafacialterrosa.jpg";
 import imgMassagemCostas from "@/assets/massagemcostas.jpeg";
 import imgMassagemPerna from "@/assets/massagemperna.jpeg";
@@ -78,7 +79,7 @@ function ServicesPage() {
         { title: "Detox & Glow Body Exfoliating", duration: "45 min", price: "$140.00", desc: "Exfoliation and wellness.", link: "https://www.vagaro.com/cl/l8LRpvk1mwduOMM7VtwLPiTkyuDW8o1rF2yc~GCiqC4=", image: imgBarrigaMassagem },
         { title: "Body Relaxing Treatment", duration: "60 min", price: "$120.00", desc: "Melt away stress and tension.", link: "https://www.vagaro.com/cl/Qm7kABTS385VLuZH9988IcJDkfXnvYeYsNJuWJQ4KKo=", image: imgMassagemCostas },
         { title: "Body Contour Detox", duration: "75 min", price: "$130.00", desc: "Combines contouring with detox.", link: "https://www.vagaro.com/cl/l8LRpvk1mwduOMM7VtwLPiTkyuDW8o1rF2yc~GCiqC4=", image: imgBarrigaMassagem2 },
-        { title: "Back Facial w/ extractions", duration: "45 min", price: "$120.00", desc: "Help with ingrown skin.", link: "https://www.vagaro.com/cl/jv65AnX37CYZDba-SfyyyiHSul5qE25oVKR4szaSzMQ=", image: imgMassagemCostas },
+        { title: "Back Facial w/ extractions", duration: "45 min", price: "$120.00", desc: "Help with ingrown skin.", link: "https://www.vagaro.com/cl/jv65AnX37CYZDba-SfyyyiHSul5qE25oVKR4szaSzMQ=", image: imgBackFacialExtractions.url },
         { title: "Body Treatment Peeling Organic Algae", duration: "60 min", price: "$120.00", desc: "Organic algae peel.", link: "https://www.vagaro.com/cl/msEWdl~4s5PuzZm4zbQgHpJ0L32KcN6Z4FPj~c2BoRs=", image: imgBodyTreatmentPeelingOrganicAlgae.url },
         { title: "Stretch Marks Treatment", duration: "60 min", price: "$480.00", desc: "Innovative Organic Peeling.", link: "https://www.vagaro.com/cl/Yntu9zt~P14280rGAZfrViuP52DiVNe4cnBsXQrqJrg=", image: imgCintura },
         { title: "Brightening Intimate Areas", duration: "45 min", price: "$140.00", desc: "Brighten intimate area.", link: "https://www.vagaro.com/cl/6q3d6i~hA0BKVLBEE~3MEMLxM2gFf1hICT~i6A06m9k=", image: imgBackBikiniBraz },
