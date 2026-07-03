@@ -23,7 +23,7 @@ import imgTeenFacialNova from "@/assets/teenfacial-nova.jpeg";
 import imgUpperLipWax from "@/assets/UpperLipWax.jpeg";
 import imgeyebrown from "@/assets/eyebrown.jpeg";
 import imgFaceLimpezaPontosPretos from "@/assets/facelimpezapontospretos.jpeg";
-import imgUtensilioRostoRaspagem from "@/assets/utensiliorostoraspagem.jpg";
+import imgDermaplaningGlow from "@/assets/dermaplaning-glow.jpg.asset.json";
 import imgBarrigaMassagem from "@/assets/barrigamassagem.jpeg";
 import imgBarrigaMassagem2 from "@/assets/barrigamassagem-2.jpeg";
 import imgMassagemOmbro from "@/assets/massagemombro.jpeg";
@@ -56,7 +56,7 @@ function ServicesPage() {
         { title: "Skin Assessment", duration: "30 min", price: "$30.00", desc: "Discover the Perfect Treatment for Your Skin!", link: "https://www.vagaro.com/cl/iPUUoMiNTENNwaEuCGUrQ4~2n~4YQlytJUxy-2-IzOY=", image: imgDeepCleaningFacialMuseByMissi },
         { title: "Deep Cleansing Facial Mizz Missi", duration: "60 min", price: "$95.00", desc: "Experience a deep cleansing treatment that purifies.", link: "https://www.vagaro.com/cl/e3XTbPwag6j6mnd8dPjQLJq06YepsqJLq203QvXln8w=", image: imgDeepCleaningFacialMuseByMissi },
         { title: "Teen Clear Skin Facial", duration: "45 min", price: "$85.00", desc: "Deep facial cleansing for teenagers.", link: "https://www.vagaro.com/cl/rpgo8HhL65SU0FN2r~Z2f0GUxYdl5hUzkN-Mtg9xfy4=", image: imgTeenFacialNova },
-        { title: "Dermaplaning Glow w/ Deep Facial Cleansing", duration: "75 min", price: "$140.00", desc: "Exfoliating outer layer of dead skin cells.", link: "https://www.vagaro.com/cl/E55Ji14rXvQK-hw2h8afLIlGOzi3igi0B24b-erf8Aw=", image: imgUtensilioRostoRaspagem },
+        { title: "Dermaplaning Glow w/ Deep Facial Cleansing", duration: "75 min", price: "$140.00", desc: "Exfoliating outer layer of dead skin cells.", link: "https://www.vagaro.com/cl/E55Ji14rXvQK-hw2h8afLIlGOzi3igi0B24b-erf8Aw=", image: imgDermaplaningGlow.url },
         { title: "Led Lamp Therapy w/ Deep Facial Cleansing", duration: "60 min", price: "$120.00", desc: "Improves texture by minimizing enlarged pores.", link: "https://www.vagaro.com/cl/XYJd1OBP5FKtbPYpBaRgR1sjvF9qVdrTM5kPtI5t69A=", image: imgLedLamp },
         { title: "Diamond Glow Microdermabrasion w/ Deep Facial Cleansing", duration: "75 min", price: "$120.00", desc: "Refresh the skin’s surface.", link: "https://www.vagaro.com/cl/ikOUzFpTtiEFUUQC9ilx8WiUCqOwr5aOpHewu7iQbSY=", image: imgMascaraFacial },
         { title: "Acne Defense Facial Peel", duration: "45 min", price: "From $160.00", desc: "Effective solution for clearer skin.", link: "https://www.vagaro.com/cl/P~crthzreveRox1uELoecKM4Jpn0qk8nmMBOHrXMPuY=", image: imgAcneDefense },
