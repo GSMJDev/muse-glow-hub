@@ -12,10 +12,10 @@ import imgDeepCleaningFacialMuseByMissi from "@/assets/DeepCleaningFacialMuseByM
 import imgFullLeggWax from "@/assets/FullLeggWax.jpeg";
 import imgHydraglossLipsHydration from "@/assets/HydraglossLipsHydration.jpeg";
 import imgLedLamp from "@/assets/ledlamp.jpeg";
-import imgBodyTreatmentPeelingOrganicAlgae from "@/assets/body-treatment-peeling-organic-algae.jpg.asset.json";
+import imgBodyTreatmentPeelingOrganicAlgae from "@/assets/body-treatment-peeling-organic-algae.jpeg";
 import imgMascaraFacial from "@/assets/mascarafacial.jpeg";
-import imgBackFacialExtractions from "@/assets/back-facial-extractions.jpg.asset.json";
-import imgSkinAssessment from "@/assets/skin-assessment.jpg.asset.json";
+import imgBackFacialExtractions from "@/assets/back-facial-extractions.jpeg";
+import imgSkinAssessment from "@/assets/skin-assessment.jpeg";
 import imgMascaraFacialTerrosa from "@/assets/mascarafacialterrosa.jpg";
 import imgMassagemCostas from "@/assets/massagemcostas.jpeg";
 import imgMassagemPerna from "@/assets/massagemperna.jpeg";
@@ -26,7 +26,7 @@ import imgTeenFacialNova from "@/assets/teenfacial-nova.jpeg";
 import imgUpperLipWax from "@/assets/UpperLipWax.jpeg";
 import imgeyebrown from "@/assets/eyebrown.jpeg";
 import imgFaceLimpezaPontosPretos from "@/assets/facelimpezapontospretos.jpeg";
-import imgDermaplaningGlow from "@/assets/dermaplaning-glow.jpg.asset.json";
+import imgDermaplaningGlow from "@/assets/dermaplaning-glow.jpeg";
 import imgBarrigaMassagem from "@/assets/barrigamassagem.jpeg";
 import imgBarrigaMassagem2 from "@/assets/barrigamassagem-2.jpeg";
 import imgMassagemOmbro from "@/assets/massagemombro.jpeg";
@@ -56,10 +56,10 @@ function ServicesPage() {
   const categories = [
     {
       id: "facial", label: "Facial", items: [
-        { title: "Skin Assessment", duration: "30 min", price: "$30.00", desc: "Discover the Perfect Treatment for Your Skin!", link: "https://www.vagaro.com/cl/iPUUoMiNTENNwaEuCGUrQ4~2n~4YQlytJUxy-2-IzOY=", image: imgSkinAssessment.url },
+        { title: "Skin Assessment", duration: "30 min", price: "$30.00", desc: "Discover the Perfect Treatment for Your Skin!", link: "https://www.vagaro.com/cl/iPUUoMiNTENNwaEuCGUrQ4~2n~4YQlytJUxy-2-IzOY=", image: imgSkinAssessment },
         { title: "Deep Cleansing Facial Mizz Missi", duration: "60 min", price: "$95.00", desc: "Experience a deep cleansing treatment that purifies.", link: "https://www.vagaro.com/cl/e3XTbPwag6j6mnd8dPjQLJq06YepsqJLq203QvXln8w=", image: imgDeepCleaningFacialMuseByMissi },
         { title: "Teen Clear Skin Facial", duration: "45 min", price: "$85.00", desc: "Deep facial cleansing for teenagers.", link: "https://www.vagaro.com/cl/rpgo8HhL65SU0FN2r~Z2f0GUxYdl5hUzkN-Mtg9xfy4=", image: imgTeenFacialNova },
-        { title: "Dermaplaning Glow w/ Deep Facial Cleansing", duration: "75 min", price: "$140.00", desc: "Exfoliating outer layer of dead skin cells.", link: "https://www.vagaro.com/cl/E55Ji14rXvQK-hw2h8afLIlGOzi3igi0B24b-erf8Aw=", image: imgDermaplaningGlow.url },
+        { title: "Dermaplaning Glow w/ Deep Facial Cleansing", duration: "75 min", price: "$140.00", desc: "Exfoliating outer layer of dead skin cells.", link: "https://www.vagaro.com/cl/E55Ji14rXvQK-hw2h8afLIlGOzi3igi0B24b-erf8Aw=", image: imgDermaplaningGlow },
         { title: "Led Lamp Therapy w/ Deep Facial Cleansing", duration: "60 min", price: "$120.00", desc: "Improves texture by minimizing enlarged pores.", link: "https://www.vagaro.com/cl/XYJd1OBP5FKtbPYpBaRgR1sjvF9qVdrTM5kPtI5t69A=", image: imgLedLamp },
         { title: "Diamond Glow Microdermabrasion w/ Deep Facial Cleansing", duration: "75 min", price: "$120.00", desc: "Refresh the skin’s surface.", link: "https://www.vagaro.com/cl/ikOUzFpTtiEFUUQC9ilx8WiUCqOwr5aOpHewu7iQbSY=", image: imgMascaraFacial },
         { title: "Acne Defense Facial Peel", duration: "45 min", price: "From $160.00", desc: "Effective solution for clearer skin.", link: "https://www.vagaro.com/cl/P~crthzreveRox1uELoecKM4Jpn0qk8nmMBOHrXMPuY=", image: imgAcneDefense },
@@ -80,8 +80,8 @@ function ServicesPage() {
         { title: "Detox & Glow Body Exfoliating", duration: "45 min", price: "$140.00", desc: "Exfoliation and wellness.", link: "https://www.vagaro.com/cl/l8LRpvk1mwduOMM7VtwLPiTkyuDW8o1rF2yc~GCiqC4=", image: imgBarrigaMassagem },
         { title: "Body Relaxing Treatment", duration: "60 min", price: "$120.00", desc: "Melt away stress and tension.", link: "https://www.vagaro.com/cl/Qm7kABTS385VLuZH9988IcJDkfXnvYeYsNJuWJQ4KKo=", image: imgMassagemCostas },
         { title: "Body Contour Detox", duration: "75 min", price: "$130.00", desc: "Combines contouring with detox.", link: "https://www.vagaro.com/cl/l8LRpvk1mwduOMM7VtwLPiTkyuDW8o1rF2yc~GCiqC4=", image: imgBarrigaMassagem2 },
-        { title: "Back Facial w/ extractions", duration: "45 min", price: "$120.00", desc: "Help with ingrown skin.", link: "https://www.vagaro.com/cl/jv65AnX37CYZDba-SfyyyiHSul5qE25oVKR4szaSzMQ=", image: imgBackFacialExtractions.url },
-        { title: "Body Treatment Peeling Organic Algae", duration: "60 min", price: "$120.00", desc: "Organic algae peel.", link: "https://www.vagaro.com/cl/msEWdl~4s5PuzZm4zbQgHpJ0L32KcN6Z4FPj~c2BoRs=", image: imgBodyTreatmentPeelingOrganicAlgae.url },
+        { title: "Back Facial w/ extractions", duration: "45 min", price: "$120.00", desc: "Help with ingrown skin.", link: "https://www.vagaro.com/cl/jv65AnX37CYZDba-SfyyyiHSul5qE25oVKR4szaSzMQ=", image: imgBackFacialExtractions },
+        { title: "Body Treatment Peeling Organic Algae", duration: "60 min", price: "$120.00", desc: "Organic algae peel.", link: "https://www.vagaro.com/cl/msEWdl~4s5PuzZm4zbQgHpJ0L32KcN6Z4FPj~c2BoRs=", image: imgBodyTreatmentPeelingOrganicAlgae },
         { title: "Stretch Marks Treatment", duration: "60 min", price: "$480.00", desc: "Innovative Organic Peeling.", link: "https://www.vagaro.com/cl/Yntu9zt~P14280rGAZfrViuP52DiVNe4cnBsXQrqJrg=", image: imgCintura },
         { title: "Brightening Intimate Areas", duration: "45 min", price: "$140.00", desc: "Brighten intimate area.", link: "https://www.vagaro.com/cl/6q3d6i~hA0BKVLBEE~3MEMLxM2gFf1hICT~i6A06m9k=", image: imgBackBikiniBraz },
         { title: "Detox Hot Blanket", duration: "45 min", price: "$120.00", desc: "Thermal therapy.", link: "https://www.vagaro.com/cl/LHirH9Jb62Nj0vAeb36pKmgr0Qa5E3GNEdm-xxOqyR0=", image: imgMassagemOmbro }
