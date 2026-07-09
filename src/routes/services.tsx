@@ -16,6 +16,7 @@ import imgBodyTreatmentPeelingOrganicAlgae from "@/assets/body-treatment-peeling
 import imgMascaraFacial from "@/assets/mascarafacial.jpeg";
 import imgBackFacialExtractions from "@/assets/back-facial-extractions.jpeg";
 import imgSkinAssessment from "@/assets/skin-assessment.jpeg";
+import imgMelasmaTreatment from "@/assets/melasma-treatment.jpeg";
 import imgMascaraFacialTerrosa from "@/assets/mascarafacialterrosa.jpg";
 import imgMassagemCostas from "@/assets/massagemcostas.jpeg";
 import imgMassagemPerna from "@/assets/massagemperna.jpeg";
@@ -63,7 +64,7 @@ function ServicesPage() {
         { title: "Led Lamp Therapy w/ Deep Facial Cleansing", duration: "60 min", price: "$120.00", desc: "Improves texture by minimizing enlarged pores.", link: "https://www.vagaro.com/cl/XYJd1OBP5FKtbPYpBaRgR1sjvF9qVdrTM5kPtI5t69A=", image: imgLedLamp },
         { title: "Diamond Glow Microdermabrasion w/ Deep Facial Cleansing", duration: "75 min", price: "$120.00", desc: "Refresh the skin’s surface.", link: "https://www.vagaro.com/cl/ikOUzFpTtiEFUUQC9ilx8WiUCqOwr5aOpHewu7iQbSY=", image: imgMascaraFacial },
         { title: "Acne Defense Facial Peel", duration: "45 min", price: "From $160.00", desc: "Effective solution for clearer skin.", link: "https://www.vagaro.com/cl/P~crthzreveRox1uELoecKM4Jpn0qk8nmMBOHrXMPuY=", image: imgAcneDefense },
-        { title: "Melasma Treatment Facial", duration: "60 min", price: "$180.00", desc: "Control and inhibit the melasma.", link: "https://www.vagaro.com/cl/ZNzbjDdgooMXIWfgM7KobY9hZPZnXyEtHBjrkw5VTbM=", image: imgMicroAgulhasRosto },
+        { title: "Melasma Treatment Facial", duration: "60 min", price: "$180.00", desc: "Control and inhibit the melasma.", link: "https://www.vagaro.com/cl/ZNzbjDdgooMXIWfgM7KobY9hZPZnXyEtHBjrkw5VTbM=", image: imgMelasmaTreatment },
         { title: "Jessner Clarifying Chemical Peel", duration: "30 min", price: "$140.00", desc: "Chemical Peel treatment.", link: "https://www.vagaro.com/cl/FtmQYXnQyqG8zR3-94R4eEGf4XSzDgUEhRsPb39ydKI=", image: imgMascaraFacialTerrosa },
         { title: "Advanced Age-Defying Facial", duration: "75 min", price: "$180.00", desc: "Combats signs of aging.", link: "https://www.vagaro.com/cl/mvqTfgB3RPVyqcS8omr-eSdgaEGfB0Ul5fzJsZjhWVA=", image: imgAdvancedAge },
         { title: "Collagen Induction Therapy-Microneedling", duration: "90 min", price: "From $220.00", desc: "Stimulate collagen and elastin production.", link: "https://www.vagaro.com/cl/lSVcRKYkEBhApcUdKT3ZgKPDYy0hyFO8GJNvTWSTCKA=", image: imgMicroAgulhasRosto },
