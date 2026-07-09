@@ -141,7 +141,7 @@ function ServicesPage() {
                       <img 
                         src={s.image} 
                         alt={s.title} 
-                        className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${s.title === 'Skin Assessment' ? 'object-[center_30%]' : 'object-[center_bottom]'}`} 
+                        className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${s.title === 'Skin Assessment' ? 'object-[center_20%]' : 'object-[center_bottom]'}`} 
                       />
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
