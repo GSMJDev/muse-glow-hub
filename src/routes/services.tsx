@@ -32,6 +32,7 @@ import imgBarrigaMassagem from "@/assets/barrigamassagem.jpeg";
 import imgBarrigaMassagem2 from "@/assets/barrigamassagem-2.jpeg";
 import imgMassagemOmbro from "@/assets/massagemombro.jpeg";
 import imgDepilacaoCanela from "@/assets/depilacaocanela.jpeg";
+import imgLowerLegWax from "@/assets/lower-leg-wax.jpeg";
 import imgBodyWrap from "@/assets/body-wrap.jpeg";
 import imgStretchMarksTreatment from "@/assets/stretch-marks-treatment.jpeg";
 
@@ -98,7 +99,7 @@ function ServicesPage() {
         { title: "Bikini Wax", duration: "20 min", price: "$45.00", desc: "Bikini line removal.", link: "https://www.vagaro.com/cl/wZsc5qsEvfqQUtCuzmjbstzmHT2Y5liEAWPLFljHc7A=", image: imgBackBikiniBraz },
         { title: "Full Brazilian Wax", duration: "30 min", price: "$55.00", desc: "Complete removal.", link: "https://www.vagaro.com/cl/Jy4G6nGtpXyIY606BTCK9CUDEM0R~gbVEyQCdFPQ8yo=", image: imgBackBikiniBraz },
         { title: "Full Leg Wax", duration: "45 min", price: "$60.00", desc: "Smooth legs.", link: "https://www.vagaro.com/cl/WGKjEE6cNzrq2VASoaauHe42RGqYsVhnjyuxvS7~wvc=", image: imgFullLeggWax },
-        { title: "Lower Leg Wax", duration: "30 min", price: "$40.00", desc: "Lower leg removal.", link: "https://www.vagaro.com/cl/2YasF2kK2ALm3-JcjLrJxBp~E4gmaeFoSaP6~i7EoXU=", image: imgDepilacaoCanela }
+        { title: "Lower Leg Wax", duration: "30 min", price: "$40.00", desc: "Lower leg removal.", link: "https://www.vagaro.com/cl/2YasF2kK2ALm3-JcjLrJxBp~E4gmaeFoSaP6~i7EoXU=", image: imgLowerLegWax }
       ]
     },
     {
