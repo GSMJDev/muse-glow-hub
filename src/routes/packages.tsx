@@ -68,7 +68,7 @@ export const Route = createFileRoute("/packages")({
   component: PackagesPage,
 });
 
-function PackagesPage() {
+export function PackagesPage() {
   return (
     <section className="pt-40 pb-28 px-6">
       <div className="mx-auto max-w-6xl">
