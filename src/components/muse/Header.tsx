@@ -7,9 +7,7 @@ import logoWhite from "@/assets/muse-logo-white.png";
 const links = [
   { to: "/about", label: "About Us" },
   { to: "/services", label: "Services" },
-  { to: "/offerings", hash: "membership", label: "Membership" },
-  { to: "/offerings", hash: "packages", label: "Packages" },
-  { to: "/offerings", hash: "gift-card", label: "Gift Card" },
+  { to: "/offerings", hash: "membership", label: "Membership, Packages & Gift Cards" },
   { to: "/gallery", label: "Gallery" },
   { to: "/team", label: "Meet the Team" },
   { to: "/contact", label: "Contact" },
