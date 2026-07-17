@@ -13,12 +13,17 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "The premier facial spa and skincare clinic in Shrewsbury, MA. Advanced facials, waxing, lymphatic drainage and body treatments.",
+          "Premier spa & aesthetics in Shrewsbury, Massachusetts offering deep facial, LED light therapy, dermaplaning, microdermabrasion, microneedling and IPL hair removal.",
+      },
+      {
+        name: "keywords",
+        content:
+          "deep facial, LED light therapy, dermaplaning, microdermabrasion, microneedling, IPL hair removal, spa, aesthetics, Shrewsbury, Massachusetts",
       },
       { property: "og:title", content: "MUSE Aesthetics & Spa by Missi" },
       {
         property: "og:description",
-        content: "Results-driven skincare and body treatments in a warm, inviting environment.",
+        content: "Deep facial, LED light therapy, dermaplaning, microdermabrasion, microneedling & IPL hair removal in Shrewsbury, Massachusetts.",
       },
     ],
     links: [
