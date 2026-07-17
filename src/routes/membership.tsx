@@ -85,7 +85,7 @@ export const Route = createFileRoute("/membership")({
   component: MembershipPage,
 });
 
-function MembershipPage() {
+export function MembershipPage() {
   return (
     <section className="pt-40 pb-28 px-6">
       <div className="mx-auto max-w-7xl text-center">

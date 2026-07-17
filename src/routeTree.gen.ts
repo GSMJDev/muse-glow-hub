@@ -13,6 +13,7 @@ import { Route as TeamRouteImport } from './routes/team'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as OffersRouteImport } from './routes/offers'
+import { Route as OfferingsRouteImport } from './routes/offerings'
 import { Route as MembershipRouteImport } from './routes/membership'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -40,6 +41,11 @@ const PackagesRoute = PackagesRouteImport.update({
 const OffersRoute = OffersRouteImport.update({
   id: '/offers',
   path: '/offers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfferingsRoute = OfferingsRouteImport.update({
+  id: '/offerings',
+  path: '/offerings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MembershipRoute = MembershipRouteImport.update({
@@ -91,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/gift-card': typeof GiftCardRoute
   '/membership': typeof MembershipRoute
+  '/offerings': typeof OfferingsRoute
   '/offers': typeof OffersRoute
   '/packages': typeof PackagesRoute
   '/services': typeof ServicesRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/gift-card': typeof GiftCardRoute
   '/membership': typeof MembershipRoute
+  '/offerings': typeof OfferingsRoute
   '/offers': typeof OffersRoute
   '/packages': typeof PackagesRoute
   '/services': typeof ServicesRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/gift-card': typeof GiftCardRoute
   '/membership': typeof MembershipRoute
+  '/offerings': typeof OfferingsRoute
   '/offers': typeof OffersRoute
   '/packages': typeof PackagesRoute
   '/services': typeof ServicesRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/gift-card'
     | '/membership'
+    | '/offerings'
     | '/offers'
     | '/packages'
     | '/services'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/gift-card'
     | '/membership'
+    | '/offerings'
     | '/offers'
     | '/packages'
     | '/services'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/gift-card'
     | '/membership'
+    | '/offerings'
     | '/offers'
     | '/packages'
     | '/services'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   GiftCardRoute: typeof GiftCardRoute
   MembershipRoute: typeof MembershipRoute
+  OfferingsRoute: typeof OfferingsRoute
   OffersRoute: typeof OffersRoute
   PackagesRoute: typeof PackagesRoute
   ServicesRoute: typeof ServicesRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/offers'
       fullPath: '/offers'
       preLoaderRoute: typeof OffersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offerings': {
+      id: '/offerings'
+      path: '/offerings'
+      fullPath: '/offerings'
+      preLoaderRoute: typeof OfferingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/membership': {
@@ -283,6 +303,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   GiftCardRoute: GiftCardRoute,
   MembershipRoute: MembershipRoute,
+  OfferingsRoute: OfferingsRoute,
   OffersRoute: OffersRoute,
   PackagesRoute: PackagesRoute,
   ServicesRoute: ServicesRoute,

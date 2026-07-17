@@ -16,7 +16,7 @@ export const Route = createFileRoute("/gift-card")({
   component: GiftCardPage,
 });
 
-function GiftCardPage() {
+export function GiftCardPage() {
   return (
     <section className="pt-40 pb-28 px-6 min-h-[80vh] flex flex-col justify-center">
       <div className="mx-auto max-w-3xl text-center">

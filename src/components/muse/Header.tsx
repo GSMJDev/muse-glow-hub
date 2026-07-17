@@ -7,9 +7,9 @@ import logoWhite from "@/assets/muse-logo-white.png";
 const links = [
   { to: "/about", label: "About Us" },
   { to: "/services", label: "Services" },
-  { to: "/gift-card", label: "Gift Card" },
-  { to: "/membership", label: "Membership" },
-  { to: "/packages", label: "Packages" },
+  { to: "/offerings", hash: "membership", label: "Membership" },
+  { to: "/offerings", hash: "packages", label: "Packages" },
+  { to: "/offerings", hash: "gift-card", label: "Gift Card" },
   { to: "/gallery", label: "Gallery" },
   { to: "/team", label: "Meet the Team" },
   { to: "/contact", label: "Contact" },
@@ -48,8 +48,9 @@ export function Header() {
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
+              hash={"hash" in l ? l.hash : undefined}
               activeProps={{ className: "text-gold" }}
               className={`text-[10px] uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
                 isHome && !scrolled 
@@ -86,8 +87,9 @@ export function Header() {
         <div className="lg:hidden glass border-t border-gold/10 px-6 py-6 flex flex-col gap-4">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
+              hash={"hash" in l ? l.hash : undefined}
               onClick={() => setOpen(false)}
               className="text-xs uppercase tracking-[0.2em] text-foreground/85 hover:text-gold"
             >
